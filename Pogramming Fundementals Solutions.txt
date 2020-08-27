@@ -1,0 +1,1218 @@
+
+1) Perimeter of rectangle
+	
+	Find the perimeter of rectangle.
+	
+	Input
+	The integer sides of rectangle a and b (1 ≤ a, b ≤ 1000).
+	
+	Output
+	Print the perimeter of rectangle.
+
+	Example 1
+	Input example #1
+	3 4
+	Output example #1
+	14
+
+
+		#include<bits/stdc++.h>
+		using namespace std;
+
+		int main(){
+
+		int a,b,c;
+		cin>>a>>b;
+		c= 2*(a+b);
+		cout<<c;
+		return 0;
+		}
+
+
+
+2) Positive negative or zero
+	
+	Given one integer n. Print is it positive, negative or equals to 0.
+	
+	Input
+	One integer n, not bigger than 109 by absolute value.
+
+	Output
+	Print "Positive", "Negative" or "Zero" depending on the value of n.
+
+	Example 1
+	Input example #1
+	45
+	Output example #1
+	Positive
+	
+	Example 2
+	Input example #2
+	0
+	Output example #2
+	Zero
+	
+	Example 3
+	Input example #3
+	-12
+	Output example #3
+	Negative
+	
+
+		
+		
+		#include <bits/stdc++.h>
+		using namespace std;
+
+		int main() {
+			
+			int n;
+			while(cin>>n){
+				if (n>0)
+				cout<<"Positive";
+				else if(n<0)
+				cout<<"Negative";
+				else
+				cout<<"Zero";
+			}
+			
+			return 0;
+		}
+
+
+3) Next even integer
+	
+	Integer n is given. Print the next even integer for n.
+
+	Input
+	One integer n.
+	
+	Output
+	Print the even integer after n.
+
+	Example 1
+	Input example #1
+	7
+	Output example #1
+	8
+	
+	Example 2
+	Input example #2
+	4
+	Output example #2
+	6
+
+
+		
+		#include <bits/stdc++.h>
+		using namespace std;
+
+		int main() {
+			
+			int n;
+			while(cin>>n){
+				
+				for (int i=n; i<=n+2; i++){
+					
+					if((i%2==0) && (i!=n))
+					cout<<i<<"\n";
+					
+				}
+			}
+			
+			return 0;
+		}
+
+
+
+4) Append three
+	
+	Three digit number n is given. Append to it the digit 3 from the left and from the right.
+
+	Input
+	One three digit number n.
+
+	Output
+	Append to the number n the digit 3 from the left and from the right. Print the resulting number.
+
+	Example 1
+	Input example #1
+	345
+	Output example #1
+	33453
+	
+	Example 2
+	Input example #2
+	800
+	Output example #2
+	38003
+
+
+		#include <bits/stdc++.h> 
+
+		using namespace std; 
+
+		int concat(int n, int a, int b) 
+		{ 
+
+			string s1 = to_string(n); 
+			string left_3 = to_string(a); 
+			string right_3 = to_string(b); 
+			
+			string temp = left_3 + s1;
+			string res = temp + right_3;
+			
+			int c = stoi(res); 
+
+			return c; 
+		} 
+
+		int main() 
+		{ 
+			int n;
+			int a=3,b=3;
+			while(cin>>n){
+				
+				cout << concat(n,a,b) << endl; 
+			}
+
+			return 0; 
+		} 
+
+
+
+
+5) Divide the apples - 2
+	
+	n schoolchildren divide k apples evenly, the residue remains in the basket. How many apples remains in the basket?
+
+	Input
+	Two integers n and k not greater than 1500 - rarely happens in school more pupils, and where to find such a basket?
+	
+	Output
+	Print the number of apples in the basket.
+
+	Example 1
+	Input example #1
+	3
+	14
+	Output example #1
+	2
+	
+	Example 2
+	Input example #2
+	10
+	100
+	Output example #2
+	0
+
+
+		#include <bits/stdc++.h> 
+
+		using namespace std; 
+
+		int main() 
+		{ 
+			int n,k;
+			
+			while(cin>>n>>k){
+				 int apples_taken = k/n;
+				 int ta = n * apples_taken;
+				 int total_apples = k - ta;
+				 cout<<total_apples<<endl;
+			}
+
+			return 0; 
+		} 
+
+
+
+6) Decomposition of three digit number
+	
+	Decompose a given 3-digit number to digits.
+
+	Input
+	One three digit integer (positive or negative).
+
+	Output
+	Print each digit in separate line as shown in example.
+
+	Example 1
+	Input example #1
+	198
+	Output example #1
+	1
+	9
+	8
+	
+	Example 2
+	Input example #2
+	-232
+	Output example #2
+	2
+	3
+	2
+
+
+		#include <bits/stdc++.h> 
+
+		using namespace std; 
+
+		int main() 
+		{ 
+			
+			int num,temp,factor=1;
+
+			while(cin>>num)
+			{
+				if(num<0){
+					num = num * (-1);
+				}
+		  
+				temp=num;
+				
+				while(temp){
+
+					temp=temp/10;
+					factor = factor*10;
+				}
+
+				while(factor>1){
+
+					factor = factor/10;
+					int my_num = num/factor;
+					cout<<my_num<<endl;
+					num = num % factor;
+				}
+			}
+			return 0; 
+		} 
+
+
+
+
+7) Sum and product 3
+	
+	Given three-digit positive integer. Find the sum and the product of its digits.
+
+	Input
+	One three-digit positive integer n (100 ≤ n ≤ 999).
+	
+	Output
+	Print in one line the sum and the product of its digits.
+
+	Example 1
+	Input example #1
+	234
+	Output example #1
+	9 24
+
+
+		#include <bits/stdc++.h> 
+
+		using namespace std; 
+
+		int main() 
+		{ 
+			
+			int num,temp,factor=1;
+
+			while(cin>>num)
+			{
+				int sum=0, product=1;
+				
+				if(num<0){
+					num = num * (-1);
+				}
+		  
+				temp=num;
+				
+				while(temp){
+
+					temp=temp/10;
+					factor = factor*10;
+				}
+
+				while(factor>1){
+					
+					factor = factor/10;
+					int my_num = num/factor;
+					sum += my_num;
+					product *= my_num;
+					num = num % factor;
+				}
+				cout<<sum<<" "<<product;
+			}
+			return 0; 
+		} 
+
+
+
+8) The first digit of the number
+	
+	Find the first digit of an integer. Start count digits from the leftmost one.
+
+	Input
+	One 64-bit integer containing at least one digits. The number can be negative.
+
+	Output
+	Print the first digit of a given integer.
+
+	Example 1
+	Input example #1
+	1234567890123
+	Output example #1
+	1
+
+
+		#include <bits/stdc++.h>
+
+		using namespace std;
+
+		int main() {
+			
+			long int n, first;
+
+			while(cin>>n){
+				if(n<0){
+					n = n * (-1);
+				}
+			
+				first = n;
+				while(first >= 10)
+				{
+					first = first / 10;
+				}
+				
+				cout<<first<<endl;
+				
+			}
+			return 0;
+		}
+
+
+
+
+9) Greetings from LightOJ
+	
+	You are one of the most talented programmers and like to solve challenging problems. And my task is to make your life a bit complex by setting some easy looking hard brain storming problems such that you can sharpen your skills by practicing here. 
+	So, I wrote a code which shows a message like the following line:
+
+	Greetings from LightOJ
+
+	After that the code will select a random problem for you from my problems database based on your previously solved problems, your skills and your weaknesses. 
+	But while I was coding for implementing this great idea, I found that, all of my problems are scattered in 2 computers. So, I have to merge them before running my code.
+
+	Now you are given the number of problems in each of the computers, you have to find the total number of problems. 
+	You can safely assume that no problem is stored in multiple computers. So, all the problems are distinct.
+
+	Input
+	Input starts with an integer T (≤ 125), denoting the number of test cases.
+
+	Each case starts with a line containing two integers a and b. a denotes the number of problems in the first computer and b denotes the number of problems in the second computer. You can safely assume that a and b will be non-negative and not greater than 10.
+
+	Output
+	For each case, print the case number and the total number of problems. See the samples for exact formatting.
+
+	Sample Input
+	2
+	1 7
+	9 8
+
+	Sample Output
+	Case 1: 8
+	Case 2: 17
+
+
+
+		#include <bits/stdc++.h>
+		using namespace std;
+
+		int main() {
+			int T;
+			cin>>T;
+			int c=1;
+			while (T--){
+				int a,b;
+				cin>>a>>b;
+				int sum = 0;
+				sum = a + b;
+				cout<<"Case "<<c<<": "<<sum<<endl;
+				c++;
+			}
+			
+			return 0;
+		}
+
+
+10) Sum of digits
+	
+	Find the sum of the first and the last digit in four-digit positive integer.
+
+	Input
+	One four-digit positive integer.
+
+	Output
+	Print the sum of the first and the last digit.
+
+	Example 1
+	Input example #1
+	1235
+	Output example #1
+	6
+
+
+		#include <bits/stdc++.h>
+
+		using namespace std;
+
+		int main() {
+			
+			int n, first,last;
+			int sum = 0;
+
+			while(cin>>n){
+				
+				first = n;
+				while(first >= 10)
+				{
+					first = first / 10;
+				}
+				last = n % 10;
+				sum = first + last;
+				cout<<sum<<endl;
+			}
+			
+			return 0;
+		}
+
+
+
+11) Is it divisible by 2, 4 and 8?
+	
+	Nonnegative integer is given. Is it divisible by 2, by 4 and by 8.
+
+	Input
+	One nonnegative integer, that contains no more than 100 digits.
+
+	Output
+	Print in the first line Yes if the number is divisible by 2, otherwise print No.
+
+	Print in the second line Yes if the number is divisible by 4, otherwise print No.
+
+	Print in the third line Yes if the number is divisible by 8, otherwise print No.
+
+	Example 1
+	Input example #1
+	16
+	Output example #1
+	Yes
+	Yes
+	Yes
+	
+	Example 2
+	Input example #2
+	7135618
+	Output example #2
+	Yes
+	No
+	No
+
+
+		#include<bits/stdc++.h> 
+		using namespace std; 
+
+		bool check4(string str) { 
+			int n = str.length(); 
+
+			if (n == 0) 
+			return false; 
+
+			if (n == 1) 
+			return ((str[0]-'0')%4 == 0); 
+
+			int last = str[n-1] - '0'; 
+			int second_last = str[n-2] - '0'; 
+			return ((second_last*10 + last) % 4 == 0); 
+		} 
+
+		bool check8(string str) { 
+			int n = str.length(); 
+		  
+			if (n == 0) 
+				return false; 
+		  
+			if (n == 1) 
+				return ((str[0]-'0')%8 == 0); 
+		  
+			if (n == 2) 
+				return (((str[n-2]-'0')*10 + (str[n-1]-'0'))%8 == 0); 
+		  
+			int last = str[n-1] - '0'; 
+			int second_last = str[n-2] - '0'; 
+			int third_last = str[n-3] - '0'; 
+		  
+			return ((third_last*100 + second_last*10 + last) % 8 == 0); 
+		} 
+
+		int main(){ 
+			
+			char str[1000];
+			int l;
+			while(cin>>str){
+				l=strlen(str);
+				
+				str[l-1]%2==0? cout << "Yes\n" : cout << "No\n"; 
+				check4(str)? cout << "Yes\n" : cout << "No\n"; 
+				check8(str)? cout << "Yes\n" : cout << "No\n";
+			}
+			return 0; 
+		} 
+
+
+
+
+12) Two digits from four digits
+	
+	You are given a four digit positive integer. Obtain from it a two digit number consisting of its middle digits.
+
+	Input
+	One four digit positive integer.
+
+	Output
+	The resulting two digit integer.
+
+	Example 1
+	Input example #1
+	4765
+	Output example #1
+	76
+
+
+		#include <iostream>
+		using namespace std;
+
+		int two_digits(int n) 
+		{ 
+		 
+			string s1 = to_string(n); 
+			string temp;
+			int i=0;
+			while(s1[i+2]!='\0') 
+			{
+				temp[i] = s1[i+1]; 
+				i++;
+			}
+			temp[i]='\0'; 
+			
+			int c = stoi(temp); 
+		 
+			return c; 
+		} 
+
+		int main() {
+			int n;
+			while(cin>>n){
+				cout << two_digits(n) << endl; 
+			}
+		 return 0;
+		}
+
+
+13) Left and Right
+	
+	Four digit positive integer is given. Swap the first and the last digit in it.
+
+	Input
+	One four digit positive integer n.
+
+	Output
+	Print the resulting number.
+
+	Example 1
+	Input example #1
+	1234
+	Output example #1
+	4231
+
+
+		#include <iostream>
+
+		using namespace std;
+
+		int main()
+		{
+		   int a;
+		   cin>>a;
+		   string ab=to_string(a);
+		  
+		 if(ab[3]=='0')
+		 {
+			if(ab[1]=='0')
+			{
+				 if(ab[2]=='0')
+				 {
+					 cout<<ab[0] << endl;
+				 }
+				else
+				{   
+					cout<<ab[2]<<ab[0] << endl;
+				}
+			}
+		   else
+		   {
+				cout <<ab[1]<<ab[2]<<ab[0] << endl;
+		   }
+		 }
+		  else
+		  {
+		   cout << ab[3]<<ab[1]<<ab[2]<<ab[0] << endl;}
+
+			return 0;
+		}
+
+
+14) Sum Input-Output Practice
+	
+	Your task is to calculate the sum of some integers. 
+
+	Input
+	Input contains an integer N in the first line, and then N lines follow. Each line starts with a integer M, and then M integers follow in the same line. 
+
+	Output
+	For each group of input integers you should output their sum in one line, and with one line of output for each line in input. 
+
+	Example
+	Input:
+	2
+	4 1 2 3 4
+	5 1 2 3 4 5
+
+	Output:
+	10
+	15
+
+
+
+		#include <bits/stdc++.h>
+		using namespace std;
+
+		int main() {
+			
+			int N;
+			cin>>N;
+			while(N--){
+				
+				int M=0;
+				cin>>M;
+				int arr[M];
+				int sum=0;
+					for (int i=0; i<M; i++){
+						cin>>arr[i];
+						sum += arr[i];
+					}
+				cout<<sum<<endl;
+			}
+			return 0;
+		}
+
+
+
+
+15) A + B Problem
+	
+	Calculate A + B.
+	
+	Input
+	Each line will contain two integers A and B. Process to end of file.
+	
+	Output
+	For each case, output A + B in one line.
+	
+	Sample Input
+	1 1
+	
+	Sample Output
+	2
+
+
+
+		#include <iostream>
+		using namespace std;
+
+		int main() {
+			
+			int a,b;
+			while(cin>>a>>b){
+				int sum = a+b;
+				cout<<sum<<endl;
+			}
+
+			return 0;
+		}
+
+
+16) A+B for Input-Output Practice (I)
+	
+	Your task is to Calculate a + b.
+	Too easy?! Of course! I specially designed the problem for acm beginners.
+	You must have found that some problems have the same titles with this one, yes, all these problems were designed for the same aim.
+	
+	Input
+	The input will consist of a series of pairs of integers a and b, separated by a space, one pair of integers per line.
+	
+	Output
+	For each pair of input integers a and b you should output the sum of a and b in one line, and with one line of output for each line in input.
+	
+	Sample Input
+	1 5
+	10 20
+	
+	Sample Output
+	6
+	30
+
+
+		#include <iostream>
+		using namespace std;
+
+		int main() {
+			
+			int a,b;
+			while(cin>>a>>b){
+				int sum = a+b;
+				cout<<sum<<endl;
+			}
+
+			return 0;
+		}
+
+
+
+
+17) A+B for Input-Output Practice (II)
+	
+	Your task is to Calculate a + b.
+	
+	Input
+	Input contains an integer N in the first line, and then N lines follow. Each line consists of a pair of integers a and b, separated by a space, one pair of integers per line.
+	
+	Output
+	For each pair of input integers a and b you should output the sum of a and b in one line, and with one line of output for each line in input.
+	
+	Sample Input
+	2
+	1 5
+	10 20
+	
+	Sample Output
+	6
+	30
+
+
+
+		#include <iostream>
+		using namespace std;
+
+		int main() {
+			int T;
+			cin>>T;
+			while(T--){
+				int a,b;
+				cin>>a>>b;
+				int sum = a+b;
+				cout<<sum<<endl;
+				
+			}
+
+			return 0;
+		}
+
+
+
+18) A+B for Input-Output Practice (III)
+	
+	Your task is to Calculate a + b.
+	
+	Input
+	Input contains multiple test cases. Each test case contains a pair of integers a and b, one pair of integers per line. A test case containing 0 0 terminates the input and this test case is not to be processed.
+	
+	Output
+	For each pair of input integers a and b you should output the sum of a and b in one line, and with one line of output for each line in input.
+	
+	Sample Input
+	1 5
+	10 20
+	0 0
+	
+	Sample Output
+	6
+	30
+
+
+		#include <iostream>
+		using namespace std;
+		 
+		void sum(int a, int b){
+			if (a==0&&b==0){
+				cout<<"";
+			}
+			else{
+				int sum = a+b;
+				cout<<sum<<endl;
+			}
+		}
+		 
+		int main() {
+		 
+			int a,b;
+			while(cin>>a>>b){
+				sum(a,b);
+			}
+			return 0;
+		}
+
+
+
+
+19) A+B for Input-Output Practice (IV)
+	
+	Your task is to Calculate the sum of some integers.
+	
+	Input
+	Input contains multiple test cases. Each test case contains a integer N, and then N integers follow in the same line. A test case starting with 0 terminates the input and this test case is not to be processed.
+	
+	Output
+	For each group of input integers you should output their sum in one line, and with one line of output for each line in input.
+	
+	Sample Input
+	4 1 2 3 4
+	5 1 2 3 4 5
+	0 
+	
+	Sample Output
+	10
+	15
+
+
+
+		#include <iostream>
+		using namespace std;
+
+		int main() {
+			
+			int N;
+			while(cin>>N){
+			if (N!=0){
+				int arr[10];
+				int sum=0;
+				for (int i=0; i<N; i++){
+						cin>>arr[i];
+						sum += arr[i];
+					}
+					cout<<sum<<endl;
+			}
+			}
+			return 0;
+		}
+
+
+
+
+20) A+B for Input-Output Practice (V)
+	
+	Your task is to calculate the sum of some integers.
+	
+	Input
+	Input contains an integer N in the first line, and then N lines follow. Each line starts with a integer M, and then M integers follow in the same line.
+	
+	Output
+	For each group of input integers you should output their sum in one line, and with one line of output for each line in input.
+	
+	Sample Input
+	2
+	4 1 2 3 4
+	5 1 2 3 4 5
+	
+	Sample Output
+	10
+	15
+
+
+
+		#include <iostream>
+		using namespace std;
+
+		int main() {
+		 
+			int N;
+			cin>>N;
+			while(N--){
+				int M;
+				cin>>M;
+				int temp[10];
+				int sum = 0;
+				for (int i=0; i<M; i++){
+					cin>>temp[i];
+					sum += temp[i];
+				}
+				cout<<sum<<endl;
+			}
+			return 0;
+		}
+
+
+21) A+B for Input-Output Practice (VI)
+	
+	Your task is to calculate the sum of some integers.
+	
+	Input
+	Input contains multiple test cases, and one case one line. Each case starts with an integer N, and then N integers follow in the same line.
+	
+	Output
+	For each test case you should output the sum of N integers in one line, and with one line of output for each line in input.
+	
+	Sample Input
+	4 1 2 3 4
+	5 1 2 3 4 5
+	
+	Sample Output
+	10
+	15
+
+
+
+		#include <iostream>
+		using namespace std;
+
+		int main() {
+		 
+			int N;
+			while(cin>>N){
+				
+				int temp[10];
+				int sum = 0;
+				for (int i=0; i<N; i++){
+					cin>>temp[i];
+					sum += temp[i];
+				}
+				cout<<sum<<endl;
+			}
+			return 0;
+		}
+
+
+
+
+22) A+B for Input-Output Practice (VII)
+	
+	Your task is to Calculate a + b.
+	
+	Input
+	The input will consist of a series of pairs of integers a and b, separated by a space, one pair of integers per line.
+	
+	Output
+	For each pair of input integers a and b you should output the sum of a and b, and followed by a blank line.
+	
+	Sample Input
+	1 5
+	10 20
+	
+	Sample Output
+	6
+	30
+	 
+ 
+
+		#include <iostream>
+		using namespace std;
+
+		int main() {
+		 
+			int a,b;
+			while(cin>>a>>b){
+				int sum = a+b;
+				cout<<sum<<endl<<endl;
+			}
+			return 0;
+		}
+
+
+23) Hashmat the Brave Warrior
+	
+	Hashmat is a brave warrior who with his group of young soldiers moves from one place to another to
+	fight against his opponents. Before Fighting he just calculates one thing, the difference between his
+	soldier number and the opponent’s soldier number. From this difference he decides whether to fight or
+	not. Hashmat’s soldier number is never greater than his opponent.
+	
+	Input
+	The input contains two numbers in every line. These two numbers in each line denotes the number
+	soldiers in Hashmat’s army and his opponent’s army or vice versa. The input numbers are not greater
+	than 232. Input is terminated by ‘End of File’.
+	
+	Output
+	For each line of input, print the difference of number of soldiers between Hashmat’s army and his
+	opponent’s army. Each output should be in seperate line.
+	
+	Sample Input
+	10 12
+	10 14
+	100 200
+	
+	Sample Output
+	2
+	4
+	100
+
+
+		#include <bits/stdc++.h>
+		using namespace std; 
+
+		int main() 
+		{ 
+			long long int a,b,diff;
+			while(cin>>a>>b){
+				diff = a-b;
+				if(diff<0){
+					diff = -1 * diff;
+				}
+				cout<<diff<<endl;
+			}
+			
+				
+			return 0; 
+		}
+
+
+24) Encoding
+	Given a string containing only 'A' - 'Z', we could encode it using the following method:
+
+	1. Each sub-string containing k same characters should be encoded to "kX" where "X" is the only character in this sub-string.
+
+	2. If the length of the sub-string is 1, '1' should be ignored.
+	
+	Input
+	The first line contains an integer N (1 <= N <= 100) which indicates the number of test cases. The next N lines contain N strings. Each string consists of only 'A' - 'Z' and the length is less than 10000.
+	
+	Output
+	For each test case, output the encoded string in a line.
+	
+	Sample Input
+	2
+	ABC
+	ABBCCC
+	
+	Sample Output
+	ABC
+	A2B3C
+
+
+		#include <iostream>
+		int main(){
+			int T;
+			char string[10001];
+			scanf("%d",&T);
+			while(T--){
+				scanf("%s",string);
+				int count=1;
+				for(int i=0;i<strlen(string);i++){
+					if(string[i]==string[i+1])
+					count++;
+					else{
+						if(count==1) 
+						printf("%c",string[i]);
+						else {
+							printf("%d%c",count,string[i]);
+							count=1;
+						}
+					}
+				}
+				printf("\n");
+			}
+		}
+
+
+25) As Easy As A+B
+	These days, I am thinking about a question, how can I get a problem as easy as A+B? It is fairly difficulty to do such a thing. Of course, I got it after many waking nights.
+	Give you some integers, your task is to sort these number ascending (升序).
+	You should know how easy the problem is now!
+	Good luck!
+	
+	Input
+	Input contains multiple test cases. The first line of the input is a single integer T which is the number of test cases. T test cases follow. Each test case contains an integer N (1<=N<=1000 the number of integers to be sorted) and then N integers follow in the same line.
+	It is guarantied that all integers are in the range of 32-int.
+	
+	Output
+	For each case, print the sorting result, and one line one case.
+	
+	Sample Input
+	2
+	3 2 1 3
+	9 1 4 7 2 5 8 3 6 9
+	
+	Sample Output
+	1 2 3
+	1 2 3 4 5 6 7 8 9
+
+
+
+		#include <iostream>
+		#include<algorithm>
+		#include<string.h>
+		#include<stdio.h>
+		using namespace std; 
+
+		int main() 
+		{ 
+			int T;
+			cin>>T;
+			while(T--){
+				int n;
+				cin>>n;
+				int a[n];
+				for (int i=0; i<n; i++){
+					scanf("%d ",&a[i]);
+				}
+				int len = sizeof(a)/sizeof(a[0]); 
+
+				sort(a, a+len); 
+				cout<<a[0];
+				for (int i = 1; i < len; ++i) 
+					cout<<" "<<a[i]; 
+					
+					cout<<"\n";
+			}
+
+			return 0; 
+		} 
+
+
+26) Sum of squares
+	Find the sum of the squares of two numbers.
+
+	Input
+	Two integers a and b. The numbers do not exceed 10^9 by absolute value.
+
+	Output
+	Print a single integer a2 + b2.
+
+	Example 1
+	Input example #1
+	2 3
+	Output example #1
+	13
+
+
+
+		#include <bits/stdc++.h>
+		using namespace std;
+		 
+		int main() {
+		 
+			long long int a,b;
+			while (cin>>a>>b){
+				cout<<((a*a) + (b*b))<<endl;
+			}
+			return 0;
+		}
+

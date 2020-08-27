@@ -1,0 +1,872 @@
+	
+	
+	A)	String length  
+	Given a string. Print it and its length.
+
+	Input
+	One string with no more than 100 characters.
+
+	Output
+	On the first line print the input string. On the second line print its length.
+
+	Example 1
+	Input example #1 
+	Programming Principles 1
+
+	Output example #1
+	Programming Principles 1
+	24
+	
+	
+	#include <iostream>
+	using namespace std;
+	int main() {
+	string s;
+	while(getline(cin,s)){
+		int n = s.length();
+		cout<<s<<endl;
+		cout<<n<<endl;
+	}
+	return 0;
+	}
+	
+	
+	
+	B)  AEIOUY
+	By the vowel letters in the Latin alphabet are the lettersA, E, I, O, U and Y. The remaining letters are consonants. Write a program counting the number of vowels in the text.
+
+	Input
+	In the input file contains one line of text, consisting only of capital Latin letters and spaces. The string length does not exceed100characters.
+
+	Output
+	In the output file output one integer - the number of vowels in the input text.
+
+	Example 1
+	Input example #1 
+	PROGRAMMING CONTEST
+	
+	Output example #1 
+	5
+	
+	
+	#include <bits/stdc++.h>
+	using namespace std;
+	int main() {
+	string s;
+	getline(cin,s);
+	int n = s.length();
+	int vc = 0 ;
+	for(int i=0; i<n; i++){
+		char c = toupper(s[i]);
+		if(c=='A' || c=='E' || c=='I' || c=='O' || c=='U' || c=='Y')
+			vc++;
+	}
+	cout<<vc<<endl;
+	return 0;
+	}
+	
+	
+	C)	 Length of words 
+	Given text - sequence of words. Find the length of each word.
+
+	Input
+	Text contains sequence of words. The length of each word is no more than 20.
+
+	Output
+	For each word print in one line its length.
+
+	Example 1
+	Input example #1 
+	Programming Principles 1
+	
+	Output example #1
+	11 10 1
+	
+	Example 2
+	Input example #2 
+	I like C 
+	very
+	much
+	
+	Output example #2
+	1 4 1 4 4
+	
+	
+	#include <bits/stdc++.h>
+	using namespace std;
+	int main() {
+	string a;
+	while(cin>>a) {
+		int k=0;
+		for(int i=0;i<a.length();i++) {
+			if(a[i]!=' ' || a[i]>='0') {
+				k++;
+			}
+			if(a[i]==' ' || i==a.length()-1){
+				printf("%d ",k);
+				k=0;
+			}
+		}
+	}
+	printf("\n");
+	return 0;
+	}
+	
+	
+	
+	D)	Extra spaces 
+	Given a string. Write a program that will remove that line from all the extra spaces. A space will be assumed odd, if:
+
+	He is at the beginning of the line, until the first word;
+	it is in the end of the line after the last word;
+	more spaces are located between two words (in other words, if the words are separated by more than one space, then all spaces except one - extra).
+	
+	Input
+	Given a string S (0 ≤ |S| ≤ 255). The string contains only letters and spaces.
+
+	Output
+	Print a string without extra spaces.
+
+	Example 1
+	Input example #1 
+	Alexandr    Sergeevich   Pushkin
+	
+	Output example #1 
+	Alexandr Sergeevich Pushkin
+	
+	Example 2
+	Input example #2 
+	su yhm sn  xskp gma rig tyh skevp u rgn    o e nj  hw oiwi x e xbn  e u  gdjd hfy   dith gng  p dwymqk tx s  xn n 
+	
+	Output example #2 
+	su yhm sn xskp gma rig tyh skevp u rgn o e nj hw oiwi x e xbn e u gdjd hfy dith gng p dwymqk tx s xn n
+	
+	
+	
+	#include<bits/stdc++.h>
+	using namespace std;
+    int main() {
+    string s;
+    getline(cin,s);
+    int f=0;
+    if(isspace(s[0]))
+    f=1;
+    for(int i=0; i<s.length(); i++) {
+        if(isspace(s[i])){
+            if(isspace(s[i+1])){
+				
+			}
+			else{
+			    if(f==1){
+	                f=0;
+				}
+				else{
+	             cout << " " ;
+				}       	
+			}    
+        }
+        else{
+            cout<<s[i];
+        }
+    }
+    return 0;
+	}
+	
+	
+	
+	E)	Count the letters 
+	Given a string s and a letter c. How many times the letter appears in the string?
+
+	Input
+	First line contains string s with no more than 100 symbols. Second line contains lowercase letter c of Latin alphabet.
+
+	Output
+	Print how many times letter c appears in the string s. Uppercase and lowercase letter considered the same. For example, 'a' and 'A' considered the same letters.
+
+	Example 1
+	Input example #1
+	Programming Principles 1
+	p
+	
+	Output example #1
+	3
+	
+	Example 2
+	Input example #2 
+	This is a cat sitting on a table
+	t
+	
+	Output example #2 
+	5
+	
+	
+	#include <bits/stdc++.h>
+	using namespace std;
+	int main() {
+    string str;
+    char checkCharacter;
+    int count = 0;
+    getline(cin,str);
+    cin>>checkCharacter;
+		for (int i = 0; i < str.size(); i++) {
+	        if (tolower(str[i]) ==  checkCharacter) {
+	            ++ count;
+	        }
+	    }
+		cout<<count<<endl;
+    return 0;
+	}
+	
+	
+	
+	
+	F)	Anagrams 
+	The word is an anagram of another word, if it can be obtained by rearrangement of its letters.
+
+	Input
+	Two words are given in different lines. The words consist of lowercase letters and digits. The lengths of each word is no more than 100.
+
+	Output
+	Print "YES" if the words are anagrams of each other and "NO" otherwise.
+
+	Example 1
+	Input example #1 
+	sharm
+	marsh
+	
+	Output example #1 
+	YES
+	
+	Example 2
+	Input example #2 
+	ananas
+	nnaass
+	
+	Output example #2 
+	NO
+	
+	
+	#include <bits/stdc++.h>
+	using namespace std;
+	int main(){
+	string s1,s2;
+	cin>>s1>>s2;
+	sort(s1.begin(),s1.end());
+	sort(s2.begin(),s2.end());
+	if(s1==s2)
+	cout<<"YES\n";
+	else
+	cout<<"NO\n";
+	return 0;
+	}
+	
+	
+	
+	J)	Glass Beads 
+	Once upon a time there was a famous actress. As you may expect, she played mostly Antique Comedies most of all. All the people loved her. But she was not interested in the crowds. Her big hobby were beads of any kind. 
+	Many bead makers were working for her and they manufactured new necklaces and bracelets every day. One day she called her main Inspector of Bead Makers (IBM) and told him she wanted a very long and special necklace.
+	
+	The necklace should be made of glass beads of different sizes connected to each other but without any thread running through the beads, so that means the beads can be disconnected at any point. The actress chose the succession of beads she wants to have and the IBM promised to make the necklace. But then he realized a problem. 
+	The joint between two neighbouring beads is not very robust so it is possible that the necklace will get torn by its own weight. The situation becomes even worse when the necklace is disjoined. Moreover, the point of disconnection is very important. 
+	If there are small beads at the beginning, the possibility of tearing is much higher than if there were large beads. IBM wants to test the robustness of a necklace so he needs a program that will be able to determine the worst possible point of disjoining the beads.
+
+	The description of the necklace is a string A = a1a2 ... am specifying sizes of the particular beads, where the last character am is considered to precede character a1 in circular fashion.
+	
+	The disjoint point i is said to be worse than the disjoint point j if and only if the string A[i] = aiai+1...ana1...ai-1 is lexicografically smaller than the string A[j] = ajaj+1... ana1...aj-1. String a1a2...an is lexicografically smaller than the string b1b2...bn if and only if there exists an integer i, i ≤ n, so that aj = bj, for each j, 1 ≤ j < i and ai < bi.
+
+	Input
+	The input consists of N cases. The first line of the input contains only positive integer N. Then follow the cases. Each case consists of exactly one line containing necklace description. Maximal length of each description is 10000 characters. Each bead is represented by a lower-case character of the english alphabet (a-z), where a < b...z.
+
+	Output
+	For each case, print exactly one line containing only one integer - number of the bead which is the first at the worst possible disjoining, i.e. such i, that the string A[i] is lexicographically smallest among all the n possible disjoinings of a necklace. If there are more than one solution, print the one with the lowest i.
+
+	Example 1
+	Input example #1 
+	4
+	helloworld
+	amandamanda
+	dontcallmebfu
+	aaabaaa
+
+	Output example #1 
+	10
+	11
+	6
+	5
+	
+	
+	#include<bits/stdc++.h>
+	using namespace std;
+	int main() {
+	int N;
+	cin>>N;
+	while(N--) {
+		int save=0;
+		string s,b,c;
+		cin>>s;
+		int len=s.length();
+		char temp[len+1];
+		int i=0,k,j;
+		save=0;
+		for(i=1;i<len;i++) {
+			if(s[i]<s[save])
+				save=i;
+			else if(s[i]==s[save]) {
+				k=save;
+				j=i;
+				int count;
+				bool tempt=false;
+				for(count=0;count<len;count++) {
+					int p=save+count;
+					if(p>=len)
+						p-=len;
+					int q=j+count;
+					if(q>=len)
+						q-=len;
+					if(s[p]>s[q]){
+						tempt=true;
+						break;
+					}
+					else if(s[q]>s[p]){
+						tempt=false;
+						break;
+					}
+				}
+				if(tempt)
+					save=j;
+			}
+		}
+		cout<<save+1<<endl;
+	}
+	return 0;
+	}
+	
+	
+	K)	The Seven Percent Solution 
+	Uniform Resource Identifiers (or URIs) are strings like http://icpc.baylor.edu/icpc/, mailto:foo@bar.org, ftp://127.0.0.1/pub/linux, or even just readme.txt that are used to identify a resource, usually on the Internet or a local computer. 
+	Certain characters are reserved within URIs, and if a reserved character is part of an identifier then it must be percent-encoded by replacing it with a percent sign followed by two hexadecimal digits representing the ASCII code of the character.
+	A table of seven reserved characters and their encodings is shown below. Your job is to write a program that can percent-encode a string of characters.
+
+	Character				Encoding
+	" " (space)		  			%20
+	"!" (exclamation point)		%21
+	"$" (dollar sign)			%24
+	"%" (percent sign)			%25
+	"(" (left parenthesis)		%28
+	")" (right parenthesis)		%29
+	"*" (asterisk)				%2a
+	
+	Input
+	The input consists of one or more strings, each 1–79 characters long and on a line by itself, followed by a line containing only "#" that signals the end of the input. The character "#" is used only as an end-of-input marker and will not appear anywhere else in the input. A string may contain spaces, but not at the beginning or end of the string, and there will never be two or more consecutive spaces.
+
+	Output
+	For each input string, replace every occurrence of a reserved character in the table above by its percent-encoding, exactly as shown, and output the resulting string on a line by itself. Note that the percent-encoding for an asterisk is %2a (with a lowercase "a") rather than %2A (with an uppercase "A").
+
+	Example 1
+	Input example #1 
+	Happy Joy Joy!
+	http://icpc.baylor.edu/icpc/
+	plain_vanilla
+	(**)
+	?
+	the 7% solution
+	#
+	
+	Output example #1 
+	Happy%20Joy%20Joy%21
+	http://icpc.baylor.edu/icpc/
+	plain_vanilla
+	%28%2a%2a%29
+	?
+	the%207%25%20solution
+	
+	
+	#include <bits/stdc++.h>
+	using namespace std;
+	int main() {
+	string s;
+	while(getline(cin,s)){
+		if (s[0]!='#'){
+			for(int i=0; i<s.length(); i++){
+				if (s[i]==' ')
+				cout<<"%20";
+				if (s[i]=='!')
+				cout<<"%21";
+				if (s[i]=='$')
+				cout<<"%24";
+				if (s[i]=='%')
+				cout<<"%25";
+				if (s[i]=='(')
+				cout<<"%28";
+				if (s[i]==')')
+				cout<<"%29";
+				if (s[i]=='*')
+				cout<<"%2a";
+				if(s[i]!= ' ' && s[i]!= '!' && s[i]!= '$' && s[i]!= '%' && s[i]!= '(' && s[i]!= ')' && s[i]!= '*')
+					cout<<s[i];
+			}
+		}
+		cout<<"\n";
+	}
+	return 0;
+	}
+	
+	
+	
+	M)	Domino piling 
+	You are given a rectangular board of M × N squares. Also you are given an unlimited number of standard domino pieces of 2 × 1 squares. You are allowed to rotate the pieces. 
+	You are asked to place as many dominoes as possible on the board so as to meet the following conditions:
+
+	1. Each domino completely covers two squares.
+	2. No two dominoes overlap.
+	3. Each domino lies entirely inside the board. It is allowed to touch the edges of the board.
+
+	Find the maximum number of dominoes, which can be placed under these restrictions.
+
+	Input
+	In a single line you are given two integers M and N — board sizes in squares (1 ≤ M ≤ N ≤ 16).
+
+	Output
+	Output one number — the maximal number of dominoes, which can be placed.
+
+	Example1
+	Input
+	2 4
+	
+	Output
+	4
+	
+	Example2
+	Input
+	3 3
+	
+	Output
+	4
+	
+	
+	#include <bits/stdc++.h>
+	using namespace std;
+	int main() {
+	int N,M,s;
+	while(cin>>M>>N){
+		if(M>=1 && N<=16){
+			s=(M*N)/2;
+		}
+		cout<<s<<endl;
+	}
+	return 0;
+	}
+	
+	
+	
+	
+	N)	Petya and Strings
+	Little Petya loves presents. His mum bought him two strings of the same size for his birthday. The strings consist of uppercase and lowercase Latin letters. Now Petya wants to compare those two strings lexicographically. 
+	The letters' case does not matter, that is an uppercase letter is considered equivalent to the corresponding lowercase letter. Help Petya perform the comparison.
+
+	Input
+	Each of the first two lines contains a bought string. The strings' lengths range from 1 to 100 inclusive. It is guaranteed that the strings are of the same length and also consist of uppercase and lowercase Latin letters.
+
+	Output
+	If the first string is less than the second one, print "-1". If the second string is less than the first one, print "1". If the strings are equal, print "0". Note that the letters' case is not taken into consideration when the strings are compared.
+
+	Example1
+	Input
+	aaaa
+	aaaA
+	
+	Output
+	0
+	
+	Example2
+	Input
+	abs
+	Abz
+	
+	Output
+	-1
+	
+	Example3
+	Input
+	abcdefg
+	AbCdEfF
+	
+	Output
+	1
+	
+	Note
+	If you want more formal information about the lexicographical order (also known as the "dictionary order" or "alphabetical order"), you can visit the following site: http://en.wikipedia.org/wiki/Lexicographical_order
+	
+	
+	
+	#include <bits/stdc++.h>
+	using namespace std;
+	int main() {
+	string a, b;
+    while(cin >> a >> b){
+    	for (int i = 0; i < a.size(); i++) {
+        	if (a[i] < 92) {
+            	a[i] += 32;
+        	}
+        	if (b[i] < 92) {
+            	b[i] += 32;
+        	}
+    	}
+    	if (a < b) {
+        	cout << -1;
+    	}
+    	else if (a > b) {
+        	cout << 1;
+    	}
+    	else if (a == b) {
+        	cout << 0;
+    	}
+    	cout<<"\n";
+    }
+    return 0;
+	}
+	
+	
+	
+	
+	O)	Word Capitalization 
+	Capitalization is writing a word with its first letter as a capital letter. Your task is to capitalize the given word.
+
+	Note, that during capitalization all the letters except the first one remains unchanged.
+
+	Input
+	A single line contains a non-empty word. This word consists of lowercase and uppercase English letters. The length of the word will not exceed 103.
+
+	Output
+	Output the given word after capitalization.
+
+	Example1
+	Input
+	ApPLe
+	
+	Output
+	ApPLe
+	
+	Example2
+	Input
+	konjac
+	
+	Output
+	Konjac
+	
+	
+	
+	#include <bits/stdc++.h>
+	using namespace std;
+	int main() {
+	string str;
+    while(cin>>str){
+    	int check=0;                
+    	int i=0;                    
+    	while(str[i]){                      
+        	if(check==0){
+            	str[i]=toupper(str[i]);     
+            	check=1;
+        	}
+			i++;
+    	}
+    cout<<str<<endl;
+    }
+	return 0;
+	}
+	
+	
+	
+	P)	Hulk 
+	Dr. Bruce Banner hates his enemies (like others don't). As we all know, he can barely talk when he turns into the incredible Hulk. That's why he asked you to help him to express his feelings.
+
+	Hulk likes the Inception so much, and like that his feelings are complicated. They have n layers. The first layer is hate, second one is love, third one is hate and so on...
+	For example if n=1, then his feeling is "I hate it" or if n=2 it's "I hate that I love it", and if n=3 it's "I hate that I love that I hate it" and so on.
+
+	Please help Dr. Banner.
+
+	Input
+	The only line of the input contains a single integer n (1≤n≤100) — the number of layers of love and hate.
+
+	Output
+	Print Dr.Banner's feeling in one line.
+
+	Example1
+	Input
+	1
+	
+	Output
+	I hate it
+	
+	Example2
+	Input
+	2
+	
+	Output
+	I hate that I love it
+	
+	Example3
+	Input
+	3
+	
+	Output
+	I hate that I love that I hate it
+	
+	
+	#include <bits/stdc++.h>
+	using namespace std;
+	int main() {
+	int N;
+	while(cin>>N) {
+		cout<<"I hate ";
+		for (int i = 1; i < N; i++)
+			printf("that I %s ", i & 1 ? "love" : "hate");
+		cout<<"it\n";
+		}
+	return 0;
+	}
+	
+	
+	Q)	Way Too Long Words 
+	Sometimes some words like "localization" or "internationalization" are so long that writing them many times in one text is quite tiresome.
+
+	Let's consider a word too long, if its length is strictly more than 10 characters. All too long words should be replaced with a special abbreviation.
+
+	This abbreviation is made like this: we write down the first and the last letter of a word and between them we write the number of letters between the first and the last letters.
+	That number is in decimal system and doesn't contain any leading zeroes.
+
+	Thus, "localization" will be spelt as "l10n", and "internationalization» will be spelt as "i18n".
+
+	You are suggested to automatize the process of changing the words with abbreviations. At that all too long words should be replaced by the abbreviation and the words that are not too long should not undergo any changes.
+
+	Input
+	The first line contains an integer n (1 ≤ n ≤ 100). Each of the following n lines contains one word. All the words consist of lowercase Latin letters and possess the lengths of from 1 to 100 characters.
+
+	Output
+	Print n lines. The i-th line should contain the result of replacing of the i-th word from the input data.
+
+	Example
+	Input
+	4
+	word
+	localization
+	internationalization
+	pneumonoultramicroscopicsilicovolcanoconiosis
+	
+	Output
+	word
+	l10n
+	i18n
+	p43s
+	
+	
+	
+	#include <iostream>
+	using namespace std;
+	int main() {
+    int n;
+    string s;
+    cin >> n;
+    while (n--) {
+        cin >> s;
+        if (s.length() > 10) {
+            cout << s[0] << s.length() - 2 << s[s.length() - 1] << endl;
+        }
+        else {
+            cout << s << endl;
+        }
+    }
+    return 0;
+	}
+	
+	
+	
+	R) 	Nearly Lucky Number
+	Petya loves lucky numbers. We all know that lucky numbers are the positive integers whose decimal representations contain only the lucky digits 4 and 7. For example, numbers 47, 744, 4 are lucky and 5, 17, 467 are not.
+
+	Unfortunately, not all numbers are lucky. Petya calls a number nearly lucky if the number of lucky digits in it is a lucky number. He wonders whether number n is a nearly lucky number.
+
+	Input
+	The only line contains an integer n (1≤n≤1018).
+
+	Please do not use the %lld specificator to read or write 64-bit numbers in С++. It is preferred to use the cin, cout streams or the %I64d specificator.
+
+	Output
+	Print on the single line "YES" if n is a nearly lucky number. Otherwise, print "NO" (without the quotes).
+
+	Example1
+	Input
+	40047
+	
+	Output
+	NO
+	
+	Example2
+	Input
+	7747774
+	
+	Output
+	YES
+	
+	Example3
+	Input
+	1000000000000000000
+	
+	Output
+	NO
+	
+	Note
+	1) In the first sample there are 3 lucky digits (first one and last two), so the answer is "NO".
+	2) In the second sample there are 7 lucky digits, 7 is lucky number, so the answer is "YES".
+	3) In the third sample there are no lucky digits, so the answer is "NO".
+	
+	
+	
+	#include <bits/stdc++.h>
+	using namespace std;
+	int main() {
+	long long int n;
+	long long int num;
+	while(cin >> n){
+		int lucky = 0;
+		num = n;
+		while(num>0) {
+			if(num % 10 == 7 || num % 10 == 4)
+			lucky++;
+			num = num / 10;
+		}	
+		if(lucky == 7 || lucky == 4)
+		cout <<"YES\n";
+    	else
+    	cout <<"NO\n";
+	}
+	return 0;
+	}
+	
+	
+	
+	
+	S) 	CamelCase
+	Alice wrote a sequence of words in CamelCase as a string of letters, , having the following properties:
+
+	It is a concatenation of one or more words consisting of English letters.
+	All letters in the first word are lowercase.
+	For each of the subsequent words, the first letter is uppercase and rest of the letters are lowercase.
+	Given , print the number of words in  on a new line.
+
+	For example, . There are  words in the string.
+
+	Function Description:
+	Complete the camelcase function in the editor below. It must return the integer number of words in the input string.
+	
+	camelcase has the following parameter(s):
+
+	s: the string to analyze
+	
+	Input Format
+	A single line containing string .
+
+	Constraints
+	1<=|s|<=10^5
+	
+	Output Format
+	Print the number of words in string .
+
+	Sample Input
+	saveChangesInTheEditor
+
+	Sample Output
+	5
+	
+	Explanation
+	String  contains five words:
+
+	save
+	Changes
+	In
+	The
+	Editor
+	Thus, we print  on a new line.
+	
+	
+	
+	#include <bits/stdc++.h>
+	using namespace std;
+	int CamelCase(string str) { 
+    int count = 1; 
+    for (int i = 1; i < str.length() - 1; i++) { 
+        if (isupper(str[i])) 
+            count++; 
+    } 
+    return count; 
+	}
+	
+	int main() {
+	string s;
+	while (cin>>s){
+		cout<<CamelCase(s)<<endl;
+	}
+	return 0;
+	}
+	
+	
+	
+	T) 	Palindrome 
+	Palindrome is a sequence of characters that reads the same backwards as well as forwards. Find out whether the given text is a palindrome. Do not forget that space is not pronounced when reading.
+
+	Input
+	String S (|S| ≤ 255) consists of small Latin letters and spaces. |S| means the length of a string.
+
+	Output
+	Print "YES" if the text is a palindrome and "NO" otherwise.
+
+	Example 1
+	Input example #1 
+	palindrom
+
+	Output example #1
+	NO
+	
+	Example 2
+	Input example #2 
+	a roza upala na lapu azora
+	
+	Output example #2 
+	YES
+	
+	
+	#include <bits/stdc++.h>
+	using namespace std;
+	bool isPalindrome(string str) { 
+    int l = 0, len = str.length(); 
+    for (int i = 0; i < len; i++) 
+        str[i] = tolower(str[i]); 
+    while (l <= len) { 
+   
+        if (!(str[l] >= 'a' && str[l] <= 'z')) 
+            l++; 
+   
+        else if (!(str[len] >= 'a' && str[len] <= 'z')) 
+            len--; 
+   
+        else if (str[l] == str[len]) 
+            l++, len--; 
+   
+        else
+            return false; 
+    } 
+    return true; 
+	} 
+	
+	int main() { 
+	string s;
+	while(getline(cin,s)){
+		
+		if (isPalindrome(s)) 
+        cout << "YES\n"; 
+		else
+        cout << "NO\n";
+	}
+	return 0; 
+	}
+

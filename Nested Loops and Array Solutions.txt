@@ -502,6 +502,102 @@
 	3 found at 3
 	
 	
+	
+	K) 	Array Simulation 
+	I am retired now, so, no work, a lot of time to spare and a lot of problems to share. Well, finally I am thinking of the old days when I was a solver. But now I am stuck with a tough problem that I want to share with you.
+
+	Given an array and some operations on the array, you have to print the final state of the array. Say, the array is a[], the size is n and indexed from 0 to n-1.
+
+	The operations are:
+
+	1.      'S D'. D is an integer. D will be added with all the elements of the array.
+
+	2.      'M D'. D is an integer. All the elements of the array will be multiplied by D.
+
+	3.      'D K'. K is a non zero integer. All the elements of the array will be divided by K (integer division).
+
+	4.      'R'. It means reverse. It will reverse the elements of the array.
+
+	5.      'P Y Z'. Y and Z are integers. It will swap the elements a[Y] and a[Z].
+
+	Input
+	Input starts with an integer T (≤ 100), denoting the number of test cases.
+
+	Each case contains two integers n (1 ≤ n ≤ 100) and m (0 ≤ m ≤ 101). The next line contains n space separated integers denoting the elements of the array. Each of the next m lines contains an operation defined above. You can assume that no operation will overflow/underflow the 32 bit signed integer range or access any invalid array reference.
+
+	Output
+	For each case, print the case number first. In the next line you have to print the elements of the array. Two elements should be separated by a single space. There should be no trailing space after the last integer of the array.
+
+	Sample Input
+	2
+	5 3
+	1 2 3 4 5
+	P 0 1
+	S 1
+	R
+	4 2
+	2 7 8 1
+	M 10
+	D 5
+
+	Sample Output
+	Case 1:
+	6 5 4 2 3
+	Case 2:
+	4 14 16 2
+	
+	
+	#include <bits/stdc++.h>
+	using namespace std;
+	int main() {
+	int a[1000],x,y, T, n, m, count;
+	char operation;
+	cin >> T;
+	for (int i = 1; i <= T; i++) {
+		cin >> n;
+		cin >> m;
+		count = 0;
+		for (int i = 0; i < n; i++)
+			cin >> a[i];
+		for (int i = 0; i < m; i++) {
+			cin >> operation;
+				switch(operation) {
+					case 'D': 
+						cin >> x;
+						for (int i = 0; i < n; i++) 
+							a[i] /= x;
+							break;
+					case 'M': 
+						cin >> x;
+						for (int i = 0; i < n; i++) 
+						a[i] *= x;
+						break;
+					case 'S': 
+						cin >> x;
+						for (int i = 0; i < n; i++) 
+							a[i] += x;
+							break;
+					case 'R': 
+						for (int i = 0, j = n-1; i < j; i++, j--) 
+							swap(a[i], a[j]);
+							break;
+					case 'P': 
+						cin >> x;
+						cin >> y;
+						swap(a[x], a[y]);
+						break;
+			}
+		}
+		cout<<"Case "<<i<<":\n"<<a[0];
+		for (int i = 1; i < n; i++) {
+			cout<<" "<<a[i];
+		}
+		cout<<"\n";
+	}
+	return 0;
+	}
+	
+	
 	M)	Lineland Mail
 	All cities of Lineland are located on the Ox coordinate axis. Thus, each city is associated with its position x i — a coordinate on the Ox axis. No two cities are located at a single point.
 

@@ -1,0 +1,895 @@
+
+	1)	Gravity Flip
+	Little Chris is bored during his physics lessons (too easy), so he has built a toy box to keep himself occupied. The box is special, since it has the ability to change gravity.
+
+	There are n columns of toy cubes in the box arranged in a line. The i-th column contains a i cubes. At first, the gravity in the box is pulling the cubes downwards. When Chris switches the gravity, it begins to pull all the cubes to the right side of the box. The figure shows the initial and final configurations of the cubes in the box: the cubes that have changed their position are highlighted with orange.
+
+
+	Given the initial configuration of the toy cubes in the box, find the amounts of cubes in each of the n columns after the gravity switch!
+
+	Input
+	The first line of input contains an integer n (1 ≤ n ≤ 100), the number of the columns in the box. The next line contains n space-separated integer numbers. The i-th number a i (1 ≤ a i ≤ 100) denotes the number of cubes in the i-th column.
+
+	Output
+	Output n integer numbers separated by spaces, where the i-th number is the amount of cubes in the i-th column after the gravity switch.
+
+	Examples
+	Input
+	4
+	3 2 1 2
+	Output
+	1 2 2 3 
+
+	Input
+	3
+	2 3 8
+	Output
+	2 3 8 
+
+	Note
+	The first example case is shown on the figure. The top cube of the first column falls to the top of the last column; the top cube of the second column falls to the top of the third column; the middle cube of the first column falls to the top of the second column.
+
+	In the second example case the gravity switch does not change the heights of the columns.
+	
+	
+	#include <bits/stdc++.h>
+	using namespace std;
+	int main() {
+		int n;
+		cin>>n;
+		int a[n];
+		
+		for(int i=0; i<n; i++)
+		cin>>a[i];
+		
+		sort(a, a+n);
+		
+		for(int i=0; i<n; i++)
+		cout<<a[i]<<" ";
+		cout<<endl;
+		return 0;
+	}
+	
+	
+	
+	2)	The New Year: Meeting Friends
+	There are three friend living on the straight line Ox in Lineland. The first friend lives at the point x 1, the second friend lives at the point x 2, and the third friend lives at the point x 3. They plan to celebrate the New Year together, so they need to meet at one point. What is the minimum total distance they have to travel in order to meet at some point and celebrate the New Year?
+
+	It's guaranteed that the optimal answer is always integer.
+
+	Input
+	The first line of the input contains three distinct integers x 1, x 2 and x 3 (1 ≤ x 1, x 2, x 3 ≤ 100) — the coordinates of the houses of the first, the second and the third friends respectively.
+
+	Output
+	Print one integer — the minimum total distance the friends need to travel in order to meet together.
+
+	Examples
+	Input
+	7 1 4
+	Output
+	6
+
+	Input
+	30 20 10
+	Output
+	20
+
+	Note
+	In the first sample, friends should meet at the point 4. Thus, the first friend has to travel the distance of 3 (from the point 7 to the point 4), the second friend also has to travel the distance of 3 (from the point 1 to the point 4), while the third friend should not go anywhere because he lives at the point 4.
+	
+	
+	
+	#include<bits/stdc++.h>
+	using namespace std;
+	int main() {
+		int x[3],min_distance;
+		
+		for(int i=0; i<3; i++)
+			cin>>x[i];
+		
+		sort(x,x+3);
+		
+		min_distance = x[1];
+		min_distance = abs(min_distance-x[0]) + abs(min_distance-x[2]);
+		cout<<min_distance;
+		
+		return 0;
+	}
+
+
+
+	3)	Heist
+	There was an electronic store heist last night.
+
+	All keyboards which were in the store yesterday were numbered in ascending order from some integer number x. For example, if x=4 and there were 3 keyboards in the store, then the devices had indices 4, 5 and 6, and if x=10 and there were 7 of them then the keyboards had indices 10, 11, 12, 13, 14, 15 and 16.
+
+	After the heist, only n keyboards remain, and they have indices a1,a2,…,an. Calculate the minimum possible number of keyboards that have been stolen. The staff remember neither x nor the number of keyboards in the store before the heist.
+
+	Input
+	The first line contains single integer n (1≤n≤1000) — the number of keyboards in the store that remained after the heist.
+
+	The second line contains n distinct integers a1,a2,…,an (1≤ai≤109) — the indices of the remaining keyboards. The integers ai are given in arbitrary order and are pairwise distinct.
+
+	Output
+	Print the minimum possible number of keyboards that have been stolen if the staff remember neither x nor the number of keyboards in the store before the heist.
+
+	Examples
+	Input
+	4
+	10 13 12 8
+	Output
+	2
+
+	Input
+	5
+	7 5 6 4 8
+	Output
+	0
+
+	Note
+	In the first example, if x=8 then minimum number of stolen keyboards is equal to 2. The keyboards with indices 9 and 11 were stolen during the heist.
+
+	In the second example, if x=4 then nothing was stolen during the heist.
+	
+	
+	#include <bits/stdc++.h>
+	using namespace std;
+	int main () {
+		long long n,res=0,i;
+		cin>>n;
+		long long a[n];
+		for(i=0; i<n; i++)
+		cin>>a[i];
+		
+		sort(a,a+n);
+		
+		for (i=0; i<n-1; i++)
+			if (a[i+1] - a[i] > 1)
+				res += a[i+1] - a[i]-1;
+			
+		cout<<res<<endl;
+		return 0;
+	}
+	
+	
+	4)	GukiZ and Contest
+	Professor GukiZ likes programming contests. He especially likes to rate his students on the contests he prepares. Now, he has decided to prepare a new contest.
+
+	In total, n students will attend, and before the start, every one of them has some positive integer rating. Students are indexed from 1 to n. Let's denote the rating of i-th student as a i. After the contest ends, every student will end up with some positive integer position. GukiZ expects that his students will take places according to their ratings.
+
+	He thinks that each student will take place equal to . In particular, if student A has rating strictly lower then student B, A will get the strictly better position than B, and if two students have equal ratings, they will share the same position.
+
+	GukiZ would like you to reconstruct the results by following his expectations. Help him and determine the position after the end of the contest for each of his students if everything goes as expected.
+
+	Input
+	The first line contains integer n (1 ≤ n ≤ 2000), number of GukiZ's students.
+
+	The second line contains n numbers a 1, a 2, ... a n (1 ≤ a i ≤ 2000) where a i is the rating of i-th student (1 ≤ i ≤ n).
+
+	Output
+	In a single line, print the position after the end of the contest for each of n students in the same order as they appear in the input.
+
+	Examples
+	Input
+	3
+	1 3 3
+	Output
+	3 1 1
+	Input
+	1
+	1
+	Output
+	1
+	Input
+	5
+	3 5 3 4 5
+	Output
+	4 1 4 3 1
+	Note
+	In the first sample, students 2 and 3 are positioned first (there is no other student with higher rating), and student 1 is positioned third since there are two students with higher rating.
+
+	In the second sample, first student is the only one on the contest.
+
+	In the third sample, students 2 and 5 share the first position with highest rating, student 4 is next with third position, and students 1 and 3 are the last sharing fourth position.
+	
+	
+	#include <bits/stdc++.h>
+	using namespace std;
+	int main() {
+		int n;
+		cin>>n;
+		int ai[n];
+
+		for (int i = 0; i < n; i++)
+			cin >> ai[i];
+		
+		for (int i = 0; i < n; i++) {
+			int cnt = 1;
+			for (int j = 0; j < n; j++) {
+				if (ai[i] < ai[j])
+					cnt++;
+			}
+			cout<<cnt<<" ";
+		}
+		cout<<endl;
+		return 0;
+	}
+	
+	
+	
+	5)	Olympiad
+	The recent All-Berland Olympiad in Informatics featured n participants with each scoring a certain amount of points.
+
+	As the head of the programming committee, you are to determine the set of participants to be awarded with diplomas with respect to the following criteria:
+
+	At least one participant should get a diploma.
+	None of those with score equal to zero should get awarded.
+	When someone is awarded, all participants with score not less than his score should also be awarded.
+	Determine the number of ways to choose a subset of participants that will receive the diplomas.
+
+	Input
+	The first line contains a single integer n (1 ≤ n ≤ 100) — the number of participants.
+
+	The next line contains a sequence of n integers a 1, a 2, ..., a n (0 ≤ a i ≤ 600) — participants' scores.
+
+	It's guaranteed that at least one participant has non-zero score.
+
+	Output
+	Print a single integer — the desired number of ways.
+
+	Examples
+	Input
+	4
+	1 3 3 2
+	Output
+	3
+	
+	Input
+	3
+	1 1 1
+	Output
+	1
+	
+	Input
+	4
+	42 0 0 42
+	Output
+	1
+	
+	Note
+	There are three ways to choose a subset in sample case one.
+
+	Only participants with 3 points will get diplomas.
+	Participants with 2 or 3 points will get diplomas.
+	Everyone will get a diploma!
+	The only option in sample case two is to award everyone.
+
+	Note that in sample case three participants with zero scores cannot get anything.
+	
+	
+	#include<bits/stdc++.h>
+	using namespace std;
+	int main() {
+		int n,a[105],res;
+		cin>>n;
+		for(int i=0; i<n; i++)
+		cin>>a[i];
+		sort(a,a+n);
+		n=unique(a,a+n)-a;
+		res=n-(a[0]==0);
+		cout<<res;
+	}
+	
+	
+	6)	Is it rated?
+	Is it rated?
+
+	Here it is. The Ultimate Question of Competitive Programming, Codeforces, and Everything. And you are here to answer it.
+
+	Another Codeforces round has been conducted. No two participants have the same number of points. For each participant, from the top to the bottom of the standings, their rating before and after the round is known.
+
+	It's known that if at least one participant's rating has changed, then the round was rated for sure.
+
+	It's also known that if the round was rated and a participant with lower rating took a better place in the standings than a participant with higher rating, then at least one round participant's rating has changed.
+
+	In this problem, you should not make any other assumptions about the rating system.
+
+	Determine if the current round is rated, unrated, or it's impossible to determine whether it is rated of not.
+
+	Input
+	The first line contains a single integer n (2 ≤ n ≤ 1000) — the number of round participants.
+
+	Each of the next n lines contains two integers a i and b i (1 ≤ a i, b i ≤ 4126) — the rating of the i-th participant before and after the round, respectively. The participants are listed in order from the top to the bottom of the standings.
+
+	Output
+	If the round is rated for sure, print "rated". If the round is unrated for sure, print "unrated". If it's impossible to determine whether the round is rated or not, print "maybe".
+
+	Examples
+	Input
+	6
+	3060 3060
+	2194 2194
+	2876 2903
+	2624 2624
+	3007 2991
+	2884 2884
+	Output
+	rated
+
+	Input
+	4
+	1500 1500
+	1300 1300
+	1200 1200
+	1400 1400
+	Output
+	unrated
+
+	Input
+	5
+	3123 3123
+	2777 2777
+	2246 2246
+	2246 2246
+	1699 1699
+	Output
+	maybe
+
+	Note
+	In the first example, the ratings of the participants in the third and fifth places have changed, therefore, the round was rated.
+
+	In the second example, no one's rating has changed, but the participant in the second place has lower rating than the participant in the fourth place. Therefore, if the round was rated, someone's rating would've changed for sure.
+
+	In the third example, no one's rating has changed, and the participants took places in non-increasing order of their rating. Therefore, it's impossible to determine whether the round is rated or not.
+	
+	
+	#include <bits/stdc++.h>
+	using namespace std;
+	int main() {
+    int n,c1=0,c2=0;
+	cin>>n;
+	int ai[n],bi[n],temp[n];
+	for(int i=0;i<n;i++){
+		int x,y;
+		cin>>x>>y;
+		ai[i]=x;
+		bi[i]=y;
+		temp[i]=y;
+	}
+
+	for(int i=0;i<n;i++){
+		if(ai[i]==bi[i])
+			c1++;
+	}
+	sort(bi,bi+n);
+	
+	for(int i=n-1,j=0;i>=0;i--,j++) {
+		if(bi[i]==temp[j])
+		 c2++;
+	}
+	
+	if(c1!=n)
+		cout<<"rated";
+	else if(c1==n&&c2==n)
+        cout<<"maybe";
+	else
+		cout<<"unrated";
+	
+	return 0;
+	}
+	
+	
+	7)	Nastya and an Array
+	Nastya owns too many arrays now, so she wants to delete the least important of them. However, she discovered that this array is magic! Nastya now knows that the array has the following properties:
+
+	In one second we can add an arbitrary (possibly negative) integer to all elements of the array that are not equal to zero.
+	When all elements of the array become equal to zero, the array explodes.
+	Nastya is always busy, so she wants to explode the array as fast as possible. Compute the minimum time in which the array can be exploded.
+
+	Input
+	The first line contains a single integer n (1 ≤ n ≤ 105) — the size of the array.
+
+	The second line contains n integers a 1, a 2, ..., a n ( - 105 ≤ a i ≤ 105) — the elements of the array.
+
+	Output
+	Print a single integer — the minimum number of seconds needed to make all elements of the array equal to zero.
+
+	Examples
+	Input
+	5
+	1 1 1 1 1
+	Output
+	1
+
+	Input
+	3
+	2 0 -1
+	Output
+	2
+
+	Input
+	4
+	5 -6 -5 1
+	Output
+	4
+
+	Note
+	In the first example you can add  - 1 to all non-zero elements in one second and make them equal to zero.
+
+	In the second example you can add  - 2 on the first second, then the array becomes equal to [0, 0,  - 3]. On the second second you can add 3 to the third (the only non-zero) element.
+	
+	
+	#include <bits/stdc++.h>
+	using namespace std;
+	int main() {
+		
+		int n;
+		cin >> n;
+		int a[n];
+		for(int i = 0; i < n; i++)
+			cin >> a[i];
+		
+		sort(a, a+n);
+		int res = (a[0] == 0 ? 0 : 1); 
+		int temp = a[0];
+		
+		for(int i = 1; i < n; i++) {
+			if(a[i] != temp && a[i] != 0)
+				res++;
+				
+			temp = a[i];
+		}
+		cout<<res<<endl;
+		return 0;
+	}
+
+
+
+	
+	8)	Laboratories
+	The ism to iit team when visited the college for inspection were sort of in a haste because they had already planned not to give it the premier status. However the leader of the movement Varun Pandey Sir were already ready that such things might be there in their minds. So, to make the inspection procedure really fast and smooth he made a list of all the laboratories of the department. He had asked some of his juniors to compile this list department wise. But the juniors were really lazy (matiyao types) and thus they inturn distributed the work. Now in the end the final list that Varun Sir has is a lot of strings which consists of department names. Each string represents one laboratory. Refer to example for the output.
+
+	Input
+	The first line of input contains the number of strings n
+
+	the next n lines each contains a string of length 100 max and consists of only lower case alphabets.
+
+	1 <= n <= 500
+
+
+	7
+
+	cse
+
+	mnc
+
+	cse
+
+	ele
+
+	cse
+
+	zzza
+
+	physics
+
+	Output
+
+
+	cse 3
+
+	ele 1
+
+	mnc 1
+
+	physics 1
+
+	zzza 1
+
+	Explanation
+	The output contains strings sorted lexicographically and the number in front of them indicates the number of times they occured in the input.
+
+	
+	
+	#include <bits/stdc++.h> 
+	using namespace std; 
+	bool compare(string a,string b) {
+		return a<b;
+	}
+	int main() { 
+		int n;
+		cin>>n;
+		string s[n];
+		
+		for(int i=0; i<n; i++){
+			cin>>s[i];
+		}
+		
+		sort(s,s+n,compare);
+		
+		for(int i=0; i<n; i++){
+			if(s[i]!=s[i+1])
+			cout<<s[i]<<" "<<count(s,s+n,s[i])<<endl;
+		}
+		return 0; 
+	} 
+	
+	
+	
+	9)	Chef and Party
+	###Read problems statements in Hindi, Mandarin Chinese, Russian, Vietnamese and Bengali as well.
+
+	Tonight, Chef would like to hold a party for his N friends.
+
+	All friends are invited and they arrive at the party one by one in an arbitrary order. However, they have certain conditions — for each valid i, when the i-th friend arrives at the party and sees that at that point, strictly less than Ai other people (excluding Chef) have joined the party, this friend leaves the party; otherwise, this friend joins the party.
+
+	Help Chef estimate how successful the party can be — find the maximum number of his friends who could join the party (for an optimal choice of the order of arrivals).
+
+	Input
+	The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+	The first line of each test case contains a single integer N.
+	The second line contains N space-separated integers A1,A2,…,AN.
+	Output
+	For each test case, print a single line containing one integer — the maximum number of Chef's friends who could join the party.
+
+	Constraints
+	1≤T≤1,000
+	1≤N≤105
+	the sum of N over all test cases does not exceed 106
+	Example Input
+	3
+	2
+	0 0
+	6
+	3 1 0 0 5 5
+	3
+	1 2 3
+	Example Output
+	2
+	4
+	0
+	Explanation
+	Example case 1: Chef has two friends. Both of them do not require anyone else to be at the party before they join, so they will both definitely join the party.
+
+	Example case 2: At the beginning, friends 3 and 4 can arrive and join the party, since they do not require anyone else to be at the party before they join. After that, friend 2 can arrive; this friend would see that there are two people at the party and therefore also join. Then, friend 1 will also join, so in the end, there would be 4 people attending the party.
+
+	Example case 3: No one will attend the party because each of Chef's friends will find zero people at the party and leave, regardless of the order in which they arrive.
+	
+	
+	#include <bits/stdc++.h> 
+	using namespace std;
+	int main() {
+		int T;
+		cin>>T;
+		while(T--) {
+			int n,c=0;
+			cin>>n;
+			int a[n];
+		   
+			for(int i=0; i<n; i++)
+			cin>>a[i];
+		   
+			sort(a,a+n);
+		   
+			for(int i=0; i<n; i++) {
+			   if(a[i]<=c)
+			   c++;
+			}
+			cout<<c<<endl;
+		}
+		return 0;
+	}
+	
+	
+	
+	10)	Distribute Candies
+	Vidya has a box containing N candies of different sweetness. She decided to distribute these candies among her three friends - 'ISH', 'OMI' and 'GOVI'. She opted a different strategy of distributing the candies. She picks three candies from the box randomly and distribute them in such a way that 'GOVI' gets the candy with minimum sweetness from the three picked candies. This process is repeated untill the box get emptied or contain less than three candies. What is the maximum total sweetness value of the candies that 'GOVI' can get at the end?
+
+	###Input:
+	First line will contain T, number of testcases.
+	Each testcase contains single line integer N.
+	Next line contains N space separated integers, where ith integer denotes the sweetness of ith candy.
+	
+	###Output:
+	For each test case output the maximum sweetness of candies that 'GOVI' get after the distribution is completed.
+	
+	###Constraints
+	1≤T≤10
+	1≤N≤105
+	1≤K≤105 , where K is the Sweetness of candy
+	
+	###Sample Input:
+	1
+	7
+	1 3 2 5 6 11 7
+
+	###Sample Output:
+	8
+
+	###EXPLANATION:
+	She picks -> (6,11,7) and (3,2,5)
+	Maximum Sweetness of Candies that 'Govi' gets -> 6 + 2 = 8
+	
+	
+	#include <bits/stdc++.h>
+	using namespace std;
+	bool compare(long long a,  long long b) { 
+		return (a > b); 
+	} 
+	int main() {
+		int t;
+		cin>>t;
+		while(t--){
+			 long long n,i,temp;
+			cin>>n;
+			 long long  arr[n],res=0;
+			
+			for(i=0; i<n; i++)
+			cin>>arr[i];
+			
+			sort(arr,arr+n,compare);
+			int k=n/3;
+			k*=3;
+			for(i=0; i<k; i+=3){
+				temp = min(arr[i],arr[i+1]);
+				res += min(temp,arr[i+2]);
+			}
+			cout<<res<<endl;
+		}
+		return 0;
+	}
+
+
+
+	11)	 Twins
+	Imagine that you have a twin brother or sister. Having another person that looks exactly like you seems very unusual. It's hard to say if having something of an alter ego is good or bad. And if you do have a twin, then you very well know what it's like.
+
+	Now let's imagine a typical morning in your family. You haven't woken up yet, and Mom is already going to work. She has been so hasty that she has nearly forgotten to leave the two of her darling children some money to buy lunches in the school cafeteria. She fished in the purse and found some number of coins, or to be exact, n coins of arbitrary values a 1, a 2, ..., a n. But as Mom was running out of time, she didn't split the coins for you two. So she scribbled a note asking you to split the money equally.
+
+	As you woke up, you found Mom's coins and read her note. "But why split the money equally?" — you thought. After all, your twin is sleeping and he won't know anything. So you decided to act like that: pick for yourself some subset of coins so that the sum of values of your coins is strictly larger than the sum of values of the remaining coins that your twin will have. However, you correctly thought that if you take too many coins, the twin will suspect the deception. So, you've decided to stick to the following strategy to avoid suspicions: you take the minimum number of coins, whose sum of values is strictly more than the sum of values of the remaining coins. On this basis, determine what minimum number of coins you need to take to divide them in the described manner.
+
+	Input
+	The first line contains integer n (1 ≤ n ≤ 100) — the number of coins. The second line contains a sequence of n integers a 1, a 2, ..., a n (1 ≤ a i ≤ 100) — the coins' values. All numbers are separated with spaces.
+
+	Output
+	In the single line print the single number — the minimum needed number of coins.
+
+	Examples
+	Input
+	2
+	3 3
+	Output
+	2
+	Input
+	3
+	2 1 2
+	Output
+	2
+	Note
+	In the first sample you will have to take 2 coins (you and your twin have sums equal to 6, 0 correspondingly). If you take 1 coin, you get sums 3, 3. If you take 0 coins, you get sums 0, 6. Those variants do not satisfy you as your sum should be strictly more that your twins' sum.
+
+	In the second sample one coin isn't enough for us, too. You can pick coins with values 1, 2 or 2, 2. In any case, the minimum number of coins equals 2.
+	
+	
+	#include <bits/stdc++.h>
+	using namespace std;
+	int main() {
+		int n,a[100],sum=0,ans=0,ct=0;
+		cin>>n;
+		for(int i=0; i<n; i++) {
+			cin>>a[i];
+			sum += a[i];
+		}
+		sort(a,a+n);
+		sum=sum/2;
+		
+		while(ans<=sum) {
+				ct++;
+				ans += a[n-ct];
+			}
+		cout<<ct;
+		
+		return 0;
+	}
+	
+	
+	12)	Vanya and Lanterns
+	Vanya walks late at night along a straight street of length l, lit by n lanterns. Consider the coordinate system with the beginning of the street corresponding to the point 0, and its end corresponding to the point l. Then the i-th lantern is at the point a i. The lantern lights all points of the street that are at the distance of at most d from it, where d is some positive number, common for all lanterns.
+
+	Vanya wonders: what is the minimum light radius d should the lanterns have to light the whole street?
+
+	Input
+	The first line contains two integers n, l (1 ≤ n ≤ 1000, 1 ≤ l ≤ 109) — the number of lanterns and the length of the street respectively.
+
+	The next line contains n integers a i (0 ≤ a i ≤ l). Multiple lanterns can be located at the same point. The lanterns may be located at the ends of the street.
+
+	Output
+	Print the minimum light radius d, needed to light the whole street. The answer will be considered correct if its absolute or relative error doesn't exceed 10 - 9.
+
+	Examples
+	Input
+	7 15
+	15 5 3 7 9 14 0
+	Output
+	2.5000000000
+	Input
+	2 5
+	2 5
+	Output
+	2.0000000000
+	Note
+	Consider the second sample. At d = 2 the first lantern will light the segment [0, 4] of the street, and the second lantern will light segment [3, 5]. Thus, the whole street will be lit.
+	
+	
+	
+	#include <bits/stdc++.h>
+	using namespace std;
+	int main() {
+		int n, l, r;
+		cin >> n >> l;
+		int p[n];
+
+		for (int i = 0; i < n; i++)
+			cin >> p[i];
+
+		sort(p, p + n);
+		
+		r = max(p[0], l - p[n - 1]) * 2;
+
+		for (int i = 0; i < n - 1; i++)
+			r = max(r, p[i + 1] - p[i]);
+		cout.precision(9);
+		cout << fixed << r / 2.0 << endl;
+		
+		return 0;
+	}
+	
+	
+	13) Amusing Joke
+	So, the New Year holidays are over. Santa Claus and his colleagues can take a rest and have guests at last. When two "New Year and Christmas Men" meet, thear assistants cut out of cardboard the letters from the guest's name and the host's name in honor of this event. Then the hung the letters above the main entrance. One night, when everyone went to bed, someone took all the letters of our characters' names. Then he may have shuffled the letters and put them in one pile in front of the door.
+
+	The next morning it was impossible to find the culprit who had made the disorder. But everybody wondered whether it is possible to restore the names of the host and his guests from the letters lying at the door? That is, we need to verify that there are no extra letters, and that nobody will need to cut more letters.
+
+	Help the "New Year and Christmas Men" and their friends to cope with this problem. You are given both inscriptions that hung over the front door the previous night, and a pile of letters that were found at the front door next morning.
+
+	Input
+	The input file consists of three lines: the first line contains the guest's name, the second line contains the name of the residence host and the third line contains letters in a pile that were found at the door in the morning. All lines are not empty and contain only uppercase Latin letters. The length of each line does not exceed 100.
+
+	Output
+	Print "YES" without the quotes, if the letters in the pile could be permuted to make the names of the "New Year and Christmas Men". Otherwise, print "NO" without the quotes.
+
+	Examples
+	Input
+	SANTACLAUS
+	DEDMOROZ
+	SANTAMOROZDEDCLAUS
+	Output
+	YES
+
+	Input
+	PAPAINOEL
+	JOULUPUKKI
+	JOULNAPAOILELUPUKKI
+	Output
+	NO
+
+	Input
+	BABBONATALE
+	FATHERCHRISTMAS
+	BABCHRISTMASBONATALLEFATHER
+	Output
+	NO
+
+	Note
+	In the first sample the letters written in the last line can be used to write the names and there won't be any extra letters left.
+
+	In the second sample letter "P" is missing from the pile and there's an extra letter "L".
+
+	In the third sample there's an extra letter "L".
+	
+	
+	
+	#include <bits/stdc++.h>
+	using namespace std;
+	int main() {
+		
+		string s1, s2, s3, res;
+		cin>>s1>>s2>>s3;
+		res = s1 + s2;
+		sort(res.begin(), res.end());
+		sort(s3.begin(), s3.end());
+
+		if(res == s3)
+			cout << "YES" << endl;
+		else
+			cout << "NO" << endl;
+		return 0;
+	}
+	
+	
+	
+	14)	Bubble Swap Count
+	You need to shuffle a series of numbers from 1 To T, inclusive. The numbers are in ascending order, you have to shuffle them using bubble sort algorithm, that is swap every time a number is greater than another in the given list in the input. A number is greater than another in the list if the number appears later than the other in the list, check example for more clarity.
+
+	Print the count of swaps done while you run the algorithm to shuffle them.
+
+	Following is the bubble sort algorithm
+	procedure bubbleSort( A : list of items )
+
+
+	n = length(A)-1
+
+	for j=0 to n inclusive do
+
+	for i = 0 to n-1 inclusive do
+
+	/* if this pair is out of order */
+
+	if A[i] > A[i+1] then
+
+	/* swap them and remember something changed */
+
+	swap( A[i], A[i+1] )
+
+	end if
+
+	end for
+
+	end for
+
+	end procedure
+	
+	Input
+	Input description.
+
+	Input will start will an integer N on newline representing the count of test case. Each case will contain a number T on a newline, representing total count of numbers. Next line of each test case will contain T integers representing the final shuffled series of numbers.
+
+	Output
+	For each test case print the desired output, each on a newline.
+
+	Constraints
+	1 ≤ N ≤ 10
+	1 ≤ N ≤ 20
+	Example
+	Input:
+	1
+	3
+	2 1 3
+	abac
+	Output:
+	1
+
+	Explanation
+	Example case 1. One swap between 1 and 2, because 1 appears later than 2, so 1 is greater than 2.
+
+	
+	
+	#include <bits/stdc++.h>
+	using namespace std;
+	int main() {
+		
+		int t;
+		cin>>t;
+		while(t--){
+			int  n,cnt=0;
+			cin>>n;
+			int arr[n];
+			
+			for(int i=0; i<n; i++)
+			cin>>arr[i];
+					
+			for (int i = 0; i < n-1; i++)
+			for (int j = 0; j < n-i-1; j++) 
+			if (arr[j] > arr[j+1]) {
+				int temp = arr[j]; 
+				arr[j]=arr[j+1]; 
+				arr[j+1]=temp;
+				cnt++;
+			}
+
+			cout<<cnt<<endl;
+		}
+		return 0;
+	}
+
+	

@@ -1,0 +1,152 @@
+1)A - Even or Odd
+Positive integer n is given. Determine its parity.
+
+Input
+One positive integer n (1 ≤ n ≤ 109).
+
+Output
+If number n is even, print EVEN. If number is odd, print ODD..
+Example 1
+Input example #1 
+Output example #1  
+ODD
+
+Example 2
+Input example #2  
+100
+Output example #2  
+EVEN
+
+solution)
+
+#include <iostream> 
+using namespace std; 
+ 
+	
+ 
+int main() 
+{ 
+	int n;
+	cin>>n;
+!(n & 1) 
+? cout << "EVEN"<<endl
+: cout << "ODD"<<endl; 
+	return 0; 
+} 
+2)  Degree of two
+Print the number 2n using bit operations only.
+
+Input
+One number n (0 ≤ n ≤ 30).
+
+Output
+Print the number 2n using bit operations only.
+
+
+Example 1
+Input example #1 
+0
+Output example #1  
+1
+
+Example 2
+Input example #2 
+1
+Output example #2  
+2
+solution)
+#include <iostream> 
+using namespace std; 
+ 
+	
+ 
+int main() 
+{ 
+long long	int n;
+	cin>>n;
+	int a=1 << n;
+  cout <<a  ; 
+	return 0; 
+} 
+
+3) A xor B 
+
+Two positive integers a and b are given. Apply the bitwise exclusive or operation to them.
+
+Input
+Two positive integers a and b (a, b ≤ 109).
+
+Output
+Print the result of applying xor operation over the given numbers.
+
+Example 1
+Input example #1 content_copy
+3 7
+Output example #1 content_copy
+4
+
+Example 2
+Input example #2 content_copy
+12 11
+Output example #2 content_copy
+7
+
+solution)
+
+#include <iostream> 
+using namespace std; 
+ 
+	
+ 
+int main() 
+{ 
+long long	int n,l;
+	cin>>n>>l;
+	int a=n^l;
+  cout <<a  ; 
+	return 0; 
+} 
+
+4)D - Ones 
+At informatics lessons you have probably been taught to transform the numbers from one number system to another, and to perform other similar operations. It's time to demonstrate this knowledge. Find the number of ones in binary representation of a number.
+
+Input
+One integer n (0 ≤ n ≤ 2 ∙109).
+
+Output
+Print the number of ones in binary representation of n.
+
+Example 1
+Input example #1 content_copy
+5
+Output example #1 content_copy
+2
+
+Example 2
+Input example #2 content_copy
+7
+Output example #2 content_copy
+3
+
+solution)
+
+  
+#include <iostream> 
+using namespace std; 
+  
+  
+int main() 
+{ 
+    int n  ; 
+    cin>>n;
+  int  c=0; 
+    while (n > 0) { 
+   
+      if( n % 2==1 ){
+      	c++;}
+      	 n = n / 2; 
+       
+       }
+        cout<<c<<endl;
+    return 0; 
+} 

@@ -1,3 +1,4 @@
+/*
 A) Matrix
 Two positive integers n and m are given. Print the matrix that consists of n lines and m columns, filled with positive integers from 1 to n * m, as shown in the sample.
 
@@ -13,7 +14,7 @@ Input example #1 content_copy
 Output example #1 content_copy
 1 2 3
 4 5 6
-
+*/
 #include<bits/stdc++.h>
 
 using namespace std;
@@ -40,7 +41,7 @@ int main() {
 
 
 
-
+/*
 B) Print Matrix 
 Given n * n matrix - let's call it [1..n] * [1..n] array. For given values r and c print the [1..r] * [1..c] array (r rows and c columns of the given array).
 
@@ -76,7 +77,7 @@ Output example #12 content_copy
 6 3 34
 10 12 3
 13 22 11
-
+*/
 
 #include<bits/stdc++.h>
 
@@ -106,7 +107,7 @@ int main() {
 
 
 
-
+/*
 E) Sum of rows
 Two dimensional array of size n * n is given. Find the sum of elements in its rows.
 
@@ -126,6 +127,7 @@ Output example #1 content_copy
 17
 13
 11
+*/
 
 #include<bits/stdc++.h>
  
@@ -156,7 +158,7 @@ int main() {
 
 
 
-
+/*
 F) Matrix: sum of indexes
 Let m[i][j] be a two dimensional array of size n * n. Let m[i][j] = i + j. Indexation starts from 1 (m[1][1] is a left upper corner of the matrix). Print the array.
 
@@ -176,7 +178,7 @@ Output example #1 content_copy
  5  6  7  8  9 10 
  6  7  8  9 10 11 
  7  8  9 10 11 12 
- 
+ */
  
  #include<bits/stdc++.h>
  
@@ -202,7 +204,7 @@ int main() {
 
 
 
-
+/*
 G) Half 
 Write a program that fills array n × n with the next way: secondary diagonal contains zeros, all cells above it contains twos and all cells below it contains ones.
 
@@ -219,7 +221,7 @@ Output example #1 content_copy
 220
 201
 011
-
+*/
 #include <iostream>
 using namespace std;
 
@@ -253,7 +255,7 @@ int main() {
 
 
 
-
+/*
 H) Bypass matrix with "snake"
 For a given number n fill the square matrix of size n * n with integers from 1 to n2 as follows:
 
@@ -272,7 +274,7 @@ Output example #1 content_copy
 1 2 3
 6 5 4
 7 8 9
-
+*/
 
 #include <iostream>
 using namespace std;
@@ -304,7 +306,7 @@ int main() {
 
 
 
-
+/*
 L) Sum of matrices 
 Given two matrices A and B. Find their sum C = A + B.
 
@@ -328,7 +330,7 @@ Output example #1 content_copy
 3 4 2 4 
 0 5 7 9 
 12 12 6 6 
-
+*/
 
 #include<bits/stdc++.h>
  
@@ -369,7 +371,7 @@ int main() {
 
 
 
-
+/*
 N) Snake
 Write a program that prints an integer located at line x and column y of matrix n × m that is filled like a snake:
 
@@ -385,7 +387,7 @@ Input example #1 content_copy
 5 2 3 1
 Output example #1 content_copy
 4
-
+*/
 
 
 #include <iostream>
@@ -418,7 +420,7 @@ int main() {
 
 
 
-
+/*
 O) Matrix multiplication
 Given two square matrices A and B of dimensions m × n and n × q respectively:
 
@@ -451,7 +453,7 @@ Output example #1 content_copy
 2 3
 7 2 15
 1 10 7
-
+*/
 
 
 #include<bits/stdc++.h>

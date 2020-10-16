@@ -1,3 +1,4 @@
+/*
 1)A - Even or Odd
 Positive integer n is given. Determine its parity.
 
@@ -18,7 +19,7 @@ Output example #2
 EVEN
 
 solution)
-
+*/
 #include <iostream> 
 using namespace std; 
  
@@ -35,7 +36,7 @@ int main()
 } 
 
 
-
+/*
 2)  Degree of two
 Print the number 2n using bit operations only.
 
@@ -58,6 +59,7 @@ Input example #2
 Output example #2  
 2
 solution)
+*/
 #include <iostream> 
 using namespace std; 
  
@@ -74,7 +76,7 @@ long long	int n;
 
 
 
-
+/*
 3) A xor B 
 
 Two positive integers a and b are given. Apply the bitwise exclusive or operation to them.
@@ -98,7 +100,7 @@ Output example #2 content_copy
 7
 
 solution)
-
+*/
 #include <iostream> 
 using namespace std; 
  
@@ -115,7 +117,7 @@ long long	int n,l;
 
 
 
-
+/*
 4)D - Ones 
 At informatics lessons you have probably been taught to transform the numbers from one number system to another, and to perform other similar operations. It's time to demonstrate this knowledge. Find the number of ones in binary representation of a number.
 
@@ -138,7 +140,7 @@ Output example #2 content_copy
 3
 
 solution)
-
+*/
   
 #include <iostream> 
 using namespace std; 
@@ -161,7 +163,7 @@ int main()
 } 
 
 
-
+/*
 5) E - 2^k + 2^n 
 Two different integers k and n are given. Print the value 2k + 2n, using bit operations only.
 
@@ -177,7 +179,7 @@ Input example #1
 Output example #1 
 3
 
-
+*/
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -191,7 +193,7 @@ int main() {
 	return 0;
 }
 
-
+/*
 6) F - Bitset 
 Give you a number on base ten, you should output it on base two.
 
@@ -213,7 +215,7 @@ Output example #1 content_copy
 10
 11
 
-
+*/
 #include <iostream>
 using namespace std;
 
@@ -233,7 +235,7 @@ int main() {
 }
 
 
-
+/*
 7) G - Bit value 
 Two integers а and k are given. Print the value of k-th bit of number а, that equals to 0 or 1.
 
@@ -249,7 +251,7 @@ Input example #1
 Output example #1 
 1
 
-
+*/
 #include <bits/stdc++.h> 
 using namespace std; 
 
@@ -269,7 +271,7 @@ int main() {
 
 
 
-
+/*
 8) H - Set a bit
 Two integers a and k are given. Print the number that is obtained from а by setting the value of k-th bit to 1.
 
@@ -285,7 +287,7 @@ Input example #1 content_copy
 Output example #1 content_copy
 7
 
-
+*/
 #include <iostream>
 using namespace std;
 
@@ -302,7 +304,7 @@ int main() {
 }
 
 
-
+/*
 9) I - Reset a bit 
 Given two integers a and k. Find the number that is obtained from a by reseting the value of k-th bit to 0. The least significant bit has number 0.
 
@@ -318,7 +320,7 @@ Input example #1 content_copy
 Output example #1 content_copy
 5
 
-
+*/
 
 #include <iostream>
 using namespace std;
@@ -336,7 +338,7 @@ int main() {
 }
 
 
-
+/*
 
 10) J - Invert a bit
 Two integers а and k are given. Print number that is obtained from а by inverting the k-th bit.
@@ -353,7 +355,7 @@ Input example #1 content_copy
 Output example #1 content_copy
 7
 
-
+*/
 #include <iostream>
 using namespace std;
 
@@ -370,7 +372,7 @@ int main() {
 }
 
 
-
+/*
 11) K - Reset bits
 Given two integers n and k. Reset (set to zero) the last k bits in the number n, and print the result. It is recommended to find solution without loops.
 
@@ -387,7 +389,7 @@ Input example #1 content_copy
 5 1
 Output example #1 content_copy
 4
-
+*/
 
 
 #include <bits/stdc++.h>
@@ -407,7 +409,7 @@ int main() {
 	return 0;
 }
 
-
+/*
 12) L - Reset the significant bits
 Given integer а and positive integer k. Find the number that contains only the last k bits of а (i.e. reset all bits of а except the last k bits).
 
@@ -422,7 +424,7 @@ Input example #1 content_copy
 5 1
 Output example #1 content_copy
 1
-
+*/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -461,7 +463,7 @@ int main() {
 }
 
 
-
+/*
 13) M - Lost card 
 For the board game the deck of cards is used with numbers from 1 to n (positive integer n does not exceed 106). One card is lost. Find it.
 
@@ -481,7 +483,7 @@ Input example #2 content_copy
 4 3 2 4
 Output example #2 content_copy
 1
-
+*/
 
 #include <bits/stdc++.h>
 using namespace std;

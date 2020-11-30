@@ -1,4 +1,4 @@
-
+/*
 1) Perimeter of rectangle
 	
 	Find the perimeter of rectangle.
@@ -14,7 +14,7 @@
 	3 4
 	Output example #1
 	14
-
+	*/
 
 		#include<bits/stdc++.h>
 		using namespace std;
@@ -29,8 +29,8 @@
 		}
 
 
-
-2) Positive negative or zero
+	/*
+	2) Positive negative or zero
 	
 	Given one integer n. Print is it positive, negative or equals to 0.
 	
@@ -57,7 +57,7 @@
 	-12
 	Output example #3
 	Negative
-	
+	*/
 
 		
 		
@@ -79,8 +79,8 @@
 			return 0;
 		}
 
-
-3) Next even integer
+	/*
+	3) Next even integer
 	
 	Integer n is given. Print the next even integer for n.
 
@@ -101,7 +101,7 @@
 	4
 	Output example #2
 	6
-
+	*/
 
 		
 		#include <bits/stdc++.h>
@@ -124,8 +124,8 @@
 		}
 
 
-
-4) Append three
+	/*
+	4) Append three
 	
 	Three digit number n is given. Append to it the digit 3 from the left and from the right.
 
@@ -146,7 +146,7 @@
 	800
 	Output example #2
 	38003
-
+	*/
 
 		#include <bits/stdc++.h> 
 
@@ -181,8 +181,8 @@
 
 
 
-
-5) Divide the apples - 2
+	/*
+	5) Divide the apples - 2
 	
 	n schoolchildren divide k apples evenly, the residue remains in the basket. How many apples remains in the basket?
 
@@ -205,7 +205,7 @@
 	100
 	Output example #2
 	0
-
+	*/
 
 		#include <bits/stdc++.h> 
 
@@ -226,8 +226,8 @@
 		} 
 
 
-
-6) Decomposition of three digit number
+	/*
+	6) Decomposition of three digit number
 	
 	Decompose a given 3-digit number to digits.
 
@@ -252,7 +252,7 @@
 	2
 	3
 	2
-
+	*/
 
 		#include <bits/stdc++.h> 
 
@@ -290,8 +290,8 @@
 
 
 
-
-7) Sum and product 3
+	/*
+	7) Sum and product 3
 	
 	Given three-digit positive integer. Find the sum and the product of its digits.
 
@@ -306,7 +306,7 @@
 	234
 	Output example #1
 	9 24
-
+	*/
 
 		#include <bits/stdc++.h> 
 
@@ -347,8 +347,8 @@
 		} 
 
 
-
-8) The first digit of the number
+	/*
+	8) The first digit of the number
 	
 	Find the first digit of an integer. Start count digits from the leftmost one.
 
@@ -363,7 +363,7 @@
 	1234567890123
 	Output example #1
 	1
-
+	*/
 
 		#include <bits/stdc++.h>
 
@@ -392,10 +392,10 @@
 
 
 
-
-9) Greetings from LightOJ
+	/*
+	9) Greetings from LightOJ
 	
-	You are one of the most talented programmers and like to solve challenging problems. And my task is to make your life a bit complex by setting some easy looking hard brain storming problems such that you can sharpen your skills by practicing here. 
+		You are one of the most talented programmers and like to solve challenging problems. And my task is to make your life a bit complex by setting some easy looking hard brain storming problems such that you can sharpen your skills by practicing here. 
 	So, I wrote a code which shows a message like the following line:
 
 	Greetings from LightOJ
@@ -422,7 +422,7 @@
 	Sample Output
 	Case 1: 8
 	Case 2: 17
-
+	*/
 
 
 		#include <bits/stdc++.h>
@@ -444,8 +444,8 @@
 			return 0;
 		}
 
-
-10) Sum of digits
+	/*
+	10) Sum of digits
 	
 	Find the sum of the first and the last digit in four-digit positive integer.
 
@@ -460,7 +460,7 @@
 	1235
 	Output example #1
 	6
-
+	*/
 
 		#include <bits/stdc++.h>
 
@@ -487,8 +487,8 @@
 		}
 
 
-
-11) Is it divisible by 2, 4 and 8?
+	/*
+	11) Is it divisible by 2, 4 and 8?
 	
 	Nonnegative integer is given. Is it divisible by 2, by 4 and by 8.
 
@@ -517,7 +517,7 @@
 	Yes
 	No
 	No
-
+	*/
 
 		#include<bits/stdc++.h> 
 		using namespace std; 
@@ -571,8 +571,8 @@
 
 
 
-
-12) Two digits from four digits
+	/*
+	12) Two digits from four digits
 	
 	You are given a four digit positive integer. Obtain from it a two digit number consisting of its middle digits.
 
@@ -587,7 +587,7 @@
 	4765
 	Output example #1
 	76
-
+	*/
 
 		#include <iostream>
 		using namespace std;
@@ -618,8 +618,8 @@
 		 return 0;
 		}
 
-
-13) Left and Right
+	/*
+	13) Left and Right
 	
 	Four digit positive integer is given. Swap the first and the last digit in it.
 
@@ -634,7 +634,7 @@
 	1234
 	Output example #1
 	4231
-
+	*/
 
 		#include <iostream>
 
@@ -671,8 +671,8 @@
 			return 0;
 		}
 
-
-14) Sum Input-Output Practice
+	/*
+	14) Sum Input-Output Practice
 	
 	Your task is to calculate the sum of some integers. 
 
@@ -691,7 +691,7 @@
 	Output:
 	10
 	15
-
+	*/
 
 
 		#include <bits/stdc++.h>
@@ -718,8 +718,8 @@
 
 
 
-
-15) A + B Problem
+	/*
+	15) A + B Problem
 	
 	Calculate A + B.
 	
@@ -734,7 +734,7 @@
 	
 	Sample Output
 	2
-
+	*/
 
 
 		#include <iostream>
@@ -751,8 +751,8 @@
 			return 0;
 		}
 
-
-16) A+B for Input-Output Practice (I)
+	/*
+	16) A+B for Input-Output Practice (I)
 	
 	Your task is to Calculate a + b.
 	Too easy?! Of course! I specially designed the problem for acm beginners.
@@ -771,7 +771,7 @@
 	Sample Output
 	6
 	30
-
+	*/
 
 		#include <iostream>
 		using namespace std;
@@ -789,8 +789,8 @@
 
 
 
-
-17) A+B for Input-Output Practice (II)
+	/*
+	17) A+B for Input-Output Practice (II)
 	
 	Your task is to Calculate a + b.
 	
@@ -808,7 +808,7 @@
 	Sample Output
 	6
 	30
-
+	*/
 
 
 		#include <iostream>
@@ -829,8 +829,8 @@
 		}
 
 
-
-18) A+B for Input-Output Practice (III)
+	/*
+	18) A+B for Input-Output Practice (III)
 	
 	Your task is to Calculate a + b.
 	
@@ -848,7 +848,7 @@
 	Sample Output
 	6
 	30
-
+	*/
 
 		#include <iostream>
 		using namespace std;
@@ -874,8 +874,8 @@
 
 
 
-
-19) A+B for Input-Output Practice (IV)
+	/*
+	19) A+B for Input-Output Practice (IV)
 	
 	Your task is to Calculate the sum of some integers.
 	
@@ -893,7 +893,7 @@
 	Sample Output
 	10
 	15
-
+	*/
 
 
 		#include <iostream>
@@ -918,8 +918,8 @@
 
 
 
-
-20) A+B for Input-Output Practice (V)
+	/*
+	20) A+B for Input-Output Practice (V)
 	
 	Your task is to calculate the sum of some integers.
 	
@@ -937,7 +937,7 @@
 	Sample Output
 	10
 	15
-
+	*/
 
 
 		#include <iostream>
@@ -961,8 +961,8 @@
 			return 0;
 		}
 
-
-21) A+B for Input-Output Practice (VI)
+	/*
+	21) A+B for Input-Output Practice (VI)
 	
 	Your task is to calculate the sum of some integers.
 	
@@ -979,7 +979,7 @@
 	Sample Output
 	10
 	15
-
+	*/
 
 
 		#include <iostream>
@@ -1003,8 +1003,8 @@
 
 
 
-
-22) A+B for Input-Output Practice (VII)
+	/*
+	22) A+B for Input-Output Practice (VII)
 	
 	Your task is to Calculate a + b.
 	
@@ -1021,8 +1021,8 @@
 	Sample Output
 	6
 	30
-	 
- 
+	*/ 
+ 	
 
 		#include <iostream>
 		using namespace std;
@@ -1037,8 +1037,8 @@
 			return 0;
 		}
 
-
-23) Hashmat the Brave Warrior
+	/*
+	23) Hashmat the Brave Warrior
 	
 	Hashmat is a brave warrior who with his group of young soldiers moves from one place to another to
 	fight against his opponents. Before Fighting he just calculates one thing, the difference between his
@@ -1063,7 +1063,7 @@
 	2
 	4
 	100
-
+	*/
 
 		#include <bits/stdc++.h>
 		using namespace std; 
@@ -1083,8 +1083,8 @@
 			return 0; 
 		}
 
-
-24) Encoding
+	/*
+	24) Encoding
 	Given a string containing only 'A' - 'Z', we could encode it using the following method:
 
 	1. Each sub-string containing k same characters should be encoded to "kX" where "X" is the only character in this sub-string.
@@ -1105,7 +1105,7 @@
 	Sample Output
 	ABC
 	A2B3C
-
+	*/
 
 		#include <iostream>
 		int main(){
@@ -1131,8 +1131,8 @@
 			}
 		}
 
-
-25) As Easy As A+B
+	/*
+	25) As Easy As A+B
 	These days, I am thinking about a question, how can I get a problem as easy as A+B? It is fairly difficulty to do such a thing. Of course, I got it after many waking nights.
 	Give you some integers, your task is to sort these number ascending (升序).
 	You should know how easy the problem is now!
@@ -1153,7 +1153,7 @@
 	Sample Output
 	1 2 3
 	1 2 3 4 5 6 7 8 9
-
+	*/
 
 
 		#include <iostream>
@@ -1186,8 +1186,8 @@
 			return 0; 
 		} 
 
-
-26) Sum of squares
+	/*
+	26) Sum of squares
 	Find the sum of the squares of two numbers.
 
 	Input
@@ -1201,7 +1201,7 @@
 	2 3
 	Output example #1
 	13
-
+	*/
 
 
 		#include <bits/stdc++.h>

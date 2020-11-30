@@ -1,6 +1,6 @@
 
 
-	A)	Print a Rectangle
+	/* A)	Print a Rectangle
 	Draw a rectangle which has a height of H cm and a width of W cm. Draw a 1-cm square by single '#'.
 
 	Input
@@ -34,7 +34,7 @@
 
 	##
 	##
-	
+	*/
 	
 	#include <bits/stdc++.h>
 	using namespace std;
@@ -54,7 +54,7 @@
 	return 0;
 	}
 	
-	
+	/*
 	B)	Print a Chessboard
 	Draw a chessboard which has a height of H cm and a width of W cm. For example, the following figure shows a chessboard which has a height of 6 cm and a width of 10 cm.
 
@@ -107,7 +107,7 @@
 	.#
 
 	#
-	
+	*/
 	
 	
 	#include <bits/stdc++.h>
@@ -132,7 +132,7 @@
 	}
 	
 	
-	
+	/*
 	C)	Toggling Cases
 	Write a program which converts uppercase/lowercase letters to lowercase/uppercase for a given string.
 
@@ -150,7 +150,7 @@
 
 	Sample Output
 	Fair, later, occasionally cloudy.
-	
+	*/
 	
 	#include <bits/stdc++.h>
 	using namespace std;
@@ -171,7 +171,7 @@
 	}
 	
 	
-	
+	/*
 	D)	Print a Frame
 	Draw a frame which has a height of H cm and a width of W cm. For example, the following figure shows a frame which has a height of 6 cm and a width of 10 cm.
 
@@ -216,7 +216,7 @@
 	###
 	#.#
 	###
-	
+	*/
 	
 	
 	#include <bits/stdc++.h> 
@@ -242,7 +242,7 @@
 
 
 
-	
+	/*
 	E)	Second Order Statistics
 	Once Bob needed to find the second order statistics of a sequence of integer numbers. Lets choose each number from the sequence exactly once and sort them. The value on the second position is the second order statistics of the given sequence. In other words it is the smallest element strictly greater than the minimum. Help Bob solve this problem.
 
@@ -267,13 +267,13 @@
 	
 	Output
 	2
-	
+	*/
 	
 	#include <bits/stdc++.h>
 	using namespace std;
 	int main() {
-    int n;
-    while(cin>>n) {
+    	int n;
+    	while(cin>>n) {
     	int a[101];    
 	    for (int i=0; i<n; i++) 
 	        cin>>a[i];
@@ -292,11 +292,11 @@
 	    else
 	    cout<<"NO\n";
 	}
-    return 0;
+    	return 0;
 	}
 	
 	
-	
+	/*
 	F)	Min, Max and Sum
 	Write a program which reads a sequence of n integers ai(i=1,2,...n), and prints the minimum value, maximum value and sum of the sequence.
 
@@ -316,7 +316,7 @@
 
 	Sample Output
 	1 17 37
-	
+	*/
 	
 	#include <bits/stdc++.h>
 	using namespace std;
@@ -335,7 +335,7 @@
 	}
 	
 	
-	
+	/*
 	 G)	Hulk
 	 Dr. Bruce Banner hates his enemies (like others don't). As we all know, he can barely talk when he turns into the incredible Hulk. That's why he asked you to help him to express his feelings.
 
@@ -371,7 +371,7 @@
 	
 	Output
 	I hate that I love that I hate it
-	
+	*/
 	
 	
 	#include <bits/stdc++.h>
@@ -388,7 +388,7 @@
 	}
 	
 	
-	
+	/*
 	H)	cAPS lOCK
 	wHAT DO WE NEED cAPS LOCK FOR?
 
@@ -421,7 +421,7 @@
 	
 	Output
 	Lock
-	
+	*/
 	
 	#include <bits/stdc++.h>
 	using namespace std;
@@ -450,7 +450,7 @@
 	}
 	
 	
-	
+	/*
 	I)	Where is the Marble?
 	Raju and Meena love to play with Marbles. They have got a lot of marbles with numbers written on them. At the beginning, Raju would place the marbles one after another in ascending order of the numbers
 	written on them. Then Meena would ask Raju to find the first marble with a certain number. She would count 1...2...3. Raju gets one point for correct answer, and Meena gets the point if Raju fails. After some
@@ -500,9 +500,9 @@
 	CASE# 2:
 	2 not found
 	3 found at 3
+	*/
 	
-	
-	
+	/*
 	K) 	Array Simulation 
 	I am retired now, so, no work, a lot of time to spare and a lot of problems to share. Well, finally I am thinking of the old days when I was a solver. But now I am stuck with a tough problem that I want to share with you.
 
@@ -545,7 +545,7 @@
 	6 5 4 2 3
 	Case 2:
 	4 14 16 2
-	
+	*/
 	
 	#include <bits/stdc++.h>
 	using namespace std;
@@ -597,7 +597,7 @@
 	return 0;
 	}
 	
-	
+	/*
 	M)	Lineland Mail
 	All cities of Lineland are located on the Ox coordinate axis. Thus, each city is associated with its position x i — a coordinate on the Ox axis. No two cities are located at a single point.
 
@@ -632,29 +632,29 @@
 	Output
 	2 2
 	2 2
-	
+	*/
 	
 	
 	#include <bits/stdc++.h>
 	using namespace std;
 	int main() {
-    int n,i,minimum,maximum;
-    cin>>n;
-    int a[n];
-    for(i=0; i<n; i++)
+    	int n,i,minimum,maximum;
+    	cin>>n;
+    	int a[n];
+    	for(i=0; i<n; i++)
     	cin>>a[i];
-    cout<<(a[1]-a[0])<<" "<<(a[n-1]-a[0])<<endl;
-    for(i=1; i<n-1; i++) {
+    	cout<<(a[1]-a[0])<<" "<<(a[n-1]-a[0])<<endl;
+    	for(i=1; i<n-1; i++) {
         minimum=min((a[i+1]-a[i]),(a[i]-a[i-1]));
         maximum=max((a[i]-a[0]),(a[n-1]-a[i]));
         cout<<minimum<<" "<<maximum<<endl;
-    }
-    cout<<(a[n-1]-a[n-2])<<" "<<(a[n-1]-a[0]);
-    return 0;
+    	}
+    	cout<<(a[n-1]-a[n-2])<<" "<<(a[n-1]-a[0]);
+    	return 0;
 	}
 	
 	
-	
+	/*
 	N)	Next Round
 	"Contestant who earns a score equal to or greater than the k-th place finisher's score will advance to the next round, as long as the contestant earns a positive score..." — an excerpt from contest rules.
 
@@ -688,7 +688,7 @@
 	Note
 	1) In the first example the participant on the 5th place earned 7 points. As the participant on the 6th place also earned 7 points, there are 6 advancers.
 	2) In the second example nobody got a positive score.
-	
+	*/
 	
 	#include<bits/stdc++.h>
 	using namespace std;
@@ -708,7 +708,7 @@
 	}
 	
 	
-	
+	/*
 	O)	In Search of an Easy Problem
 	When preparing a tournament, Codeforces coordinators try treir best to make the first problem as easy as possible. This time the coordinator had chosen some problem and asked n people about their opinions. Each person answered whether this problem is easy or hard.
 
@@ -743,7 +743,7 @@
 	Note
 	1) In the first example the third person says it's a hard problem, so it should be replaced.
 	2) In the second example the problem easy for the only person, so it doesn't have to be replaced.
-	
+	*/
 	
 	#include <bits/stdc++.h>
 	using namespace std;
@@ -764,7 +764,7 @@
 	}
 	
 	
-	
+	/*
 	Q)	Spreadsheet
 	Your task is to perform a simple table calculation.
 
@@ -793,7 +793,7 @@
 	3 3 0 1 1 8
 	2 3 4 4 6 19
 	8 9 9 13 17 56
-	
+	*/
 	
 	#include <bits/stdc++.h>
 	using namespace std;
@@ -828,7 +828,7 @@
 	}
 
 
-
+	/*
 	R)	Matrix Vector Multiplication
 	Write a program which reads a n×m matrix A and a m×1 vector b, and prints their product Ab.
 
@@ -873,7 +873,7 @@
 	5
 	6
 	9
-	
+	*/
 	
 	#include<bits/stdc++.h>
 	using namespace std;
@@ -900,7 +900,7 @@
 	
 	
 	
-	
+	/*
 	S)	Counting Characters
 	Write a program which counts and reports the number of each alphabetical letter. Ignore the case of characters.
 
@@ -950,7 +950,7 @@
 	x : 0
 	y : 0
 	z : 0
-	
+	*/
 	
 	
 	#include <bits/stdc++.h>

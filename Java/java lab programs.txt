@@ -1,0 +1,930 @@
+1. Write a Java program that implements Bubble sort algorithm for sorting in descending 
+order and also shows the number of interchanges occurred for the given set of integers. 
+
+
+import java.util.Scanner;
+public class Exp1 {
+    /* BUBBLE SORT */
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int size, cnt=0;
+        System.out.print("Enter the size of list: ");
+        size = obj.nextInt();
+
+        int list[] = new int[size];
+        System.out.print("Enter " + size + " integers: ");
+        for (int i = 0; i < size; i++) 
+            list[i] = obj.nextInt();
+
+        int temp = 0;
+        for (int i=0; i<size-1; i++) {
+            for (int j=0; j<size-i-1; j++  ) {
+                if(list[j] < list[j+1]){
+                    temp = list[j];
+                    list[j] = list[j+1];
+                    list[j+1] = temp;
+                    cnt++;
+                }
+            }
+        }
+        System.out.print("Sorted List: ");
+        for (int i=0; i<size; i++){
+            System.out.print(list[i]+ " ");
+        }
+        System.out.println("\nTotal no of interchanges: " + cnt);
+        obj.close();
+    }
+
+}
+
+
+
+
+
+2.  Write a Java program that implements Quick sort algorithm for sorting a list of names in 
+ascending order
+
+public class Exp2 {
+    /* Quick SORT */
+    String names[];
+    int length;
+    public static void main(String[] args) {
+        Exp2 obj = new Exp2();
+        String namesList[] = { "raja", "gouthami", "kusuma", "gouthu", "hello", "rani", "gouthami", "honey", "heyaansh" };
+        obj.sort(namesList);
+
+        System.out.println();
+        for (String i: namesList){
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
+    }
+
+    void sort(String array[]){
+        if( array== null || array.length == 0){ return; }
+        this.names = array;
+        this.length = array.length;
+        quickSort(0, length-1);
+    }
+    void quickSort(int lowerIndex, int higherIndex){
+        int i = lowerIndex;
+        int j = higherIndex;
+        String pivot = this.names[lowerIndex + (higherIndex-lowerIndex)/2];
+        while(i <= j){
+            while(this.names[i].compareToIgnoreCase(pivot) < 0){
+                i++;
+            }
+            
+            while(this.names[j].compareToIgnoreCase(pivot) > 0){
+                j--;
+            }
+
+            if(i <= j){
+                exchangeNames(i,j);
+                i++; j--;
+            }
+        }
+        if (lowerIndex < j) {
+            quickSort(lowerIndex, j);
+        }
+        if (i < higherIndex) {
+            quickSort(i, higherIndex);
+        }
+    }
+    void exchangeNames(int i, int j) {
+        String temp = this.names[i];
+        this.names[i] = this.names[j];
+        this.names[j] = temp;
+    }
+
+}
+
+
+
+3.Write a Java program to create an abstract class named Shape that contains two integers and an empty method named print Area (). Provide three classes named Rectangle, Triangle, and Circle such that each one of the classes extends the class Shape. Each one of the classes contains only the method print Area () that prints the area of the given shape.
+
+
+import java.util.Scanner;
+abstract class shape{
+    int length, breadth, radius;
+    Scanner input = new Scanner(System.in);
+    abstract void printArea();
+}
+
+class Rectangle extends shape{
+    void printArea(){
+        System.out.println("*** Finding the Area of Rectangle ***");
+		System.out.print("Enter length and breadth: ");
+		length = input.nextInt();
+		breadth = input.nextInt();
+		System.out.println("The area of Rectangle is: " + length * breadth);
+    }
+}
+class Triangle extends shape{
+    void printArea(){
+        System.out.println("\n*** Finding the Area of Triangle ***");
+		System.out.print("Enter Base And Height: ");
+		length = input.nextInt();
+		breadth = input.nextInt();
+		System.out.println("The area of Triangle is: " + (length * breadth) / 2);
+    }
+}
+class Circle extends shape{
+    void printArea(){
+        System.out.println("\n*** Finding the Area of Cricle ***");
+		System.out.print("Enter Radius: ");
+		radius = input.nextInt();
+		System.out.println("The area of Cricle is: " + 3.14f * radius * radius);
+    }
+}
+
+
+class Exp3 {
+    public static void main(String[] args) {
+        Rectangle rec = new Rectangle();
+		rec.printArea();
+
+		Triangle tri = new Triangle();
+		tri.printArea();
+		
+		Circle cir = new Circle();
+		cir.printArea();
+    }
+}
+
+
+
+5. Develop an applet in Java that displays a simple message.
+
+import java.awt.*; 
+import java.applet.*;
+//  <applet code="Applet1" width=200 height=300></applet>
+
+public class Exp5A extends Applet{    
+    public void paint(Graphics g){
+		g.drawString("Hello World!",20,20);
+	}
+}
+
+
+5. Develop an applet in Java that receives an integer in one text field, and computes its factorial Value and returns it in another text field, when the button named “Compute” is clicked.
+
+
+import java.awt.*; 
+import java.awt.event.*;
+import java.applet.Applet;
+// <applet code="Fact.class" height=300 width=300></applet>
+
+public class Exp5B extends Applet implements ActionListener {
+	Label inputLable,outputLable; 
+	TextField inputTextField,outputTextField; 
+	Button btn;
+	public void init(){
+		inputLable=new Label("Enter any integer value: "); 
+		inputTextField=new TextField(5); 
+		btn=new Button("Compute"); 
+		btn.addActionListener(this);
+		outputLable=new Label("Factorial of given integer number is ");
+		outputTextField=new TextField(10); 
+		add(inputLable);
+		add(inputTextField);
+		add(btn);  
+		add(outputLable);
+		add(outputTextField);
+	}
+	public void actionPerformed(ActionEvent e){
+		if(e.getSource()==btn){
+			int fact=fact(Integer.parseInt(inputTextField.getText())); 
+			outputTextField.setText(String.valueOf(fact));
+		}
+	}
+	int fact(int f){
+		if(f==0) 
+			return 1; 
+		else
+			return f*fact(f-1);
+	}
+}
+
+
+
+
+6. Write a Java program to list all the files in a directory including the files present in all its subdirectories.
+
+
+import java.util.Scanner;
+import java.io.*;
+
+class Exp6 {
+
+	public static void main(String[] args) {
+
+		String path = null;
+		Scanner read = new Scanner(System.in);
+		System.out.print("Enter the root directory name: ");
+		path = read.next() + ":\\";
+		File f_ref = new File(path);
+		if (!f_ref.exists()) {
+			printLine();
+			System.out.println("Root directory does not exists!");
+			printLine();
+		} else {
+			String ch = "y";
+			while (ch.equalsIgnoreCase("y")) {
+				printFiles(path);
+		System.out.print("Do you want to open any sub-directory (Y/N):  ");
+				ch = read.next().toLowerCase();
+				if (ch.equalsIgnoreCase("y")) {
+			System.out.print("Enter the sub-directory name: ");
+					path = path + "\\\\" + read.next();
+					File f_ref_2 = new File(path);
+					if (!f_ref_2.exists()) {
+						printLine();
+			System.out.println("The sub-directory does not exists!");
+						printLine();
+				int lastIndex = path.lastIndexOf("\\");
+				path = path.substring(0, lastIndex);
+					}
+				}
+			}
+		}
+        read.close();
+		System.out.println("***** Program Closed *****");
+	}
+
+	public static void printFiles(String path) {
+		System.out.println("Current Location: " + path);
+		File f_ref = new File(path);
+		File[] filesList = f_ref.listFiles();
+		for (File file : filesList) {
+			if (file.isFile())
+				System.out.println("- " + file.getName());
+			else
+				System.out.println("> " + file.getName());
+		}
+	}
+
+	public static void printLine() {
+		System.out.println("----------------------------------------");
+	}
+}
+
+
+
+
+
+7. Write a Java program on Double Linked List
+
+import java.util.NoSuchElementException;
+
+class Exp7_DoublyLinkedList<E> {
+    private Node head;
+    private Node tail;
+    private int size;    
+    
+    public Exp7_DoublyLinkedList() { size = 0; }
+
+    private class Node {
+        E element;
+        Node next;
+        Node prev;
+        public Node(E element, Node next, Node prev) {
+            this.element = element;
+            this.next = next;
+            this.prev = prev;
+        }
+    }
+
+    public int size() { return size; }
+
+    public boolean isEmpty() { return size == 0; }
+
+    public void addFirst(E element) {
+        Node tmp = new Node(element, head, null);
+        if(head != null ) {head.prev = tmp;}
+        head = tmp;
+        if(tail == null) { tail = tmp;}
+        size++;
+        System.out.println("adding: " + element);
+    }
+
+    public void addLast(E element) {
+        Node tmp = new Node(element, null, tail);
+        if(tail != null) {tail.next = tmp;}
+        tail = tmp;
+        if(head == null) { head = tmp;}
+        size++;
+        System.out.println("adding: " + element);
+    }
+
+    public void iterateForward(){
+        System.out.println("iterating forward...");
+        Node tmp = head;
+        while(tmp != null){
+            System.out.println(tmp.element);
+            tmp = tmp.next;
+        }
+    }
+
+    public void iterateBackward(){
+        System.out.println("iterating backword..");
+        Node tmp = tail;
+        while(tmp != null){
+            System.out.println(tmp.element);
+            tmp = tmp.prev;
+        }
+    }
+
+    public E removeFirst() {
+        if (size == 0) throw new NoSuchElementException();
+        Node tmp = head;
+        head = head.next;
+        head.prev = null;
+        size--;
+        System.out.println("deleted: " + tmp.element);
+        return tmp.element;
+    }
+
+    public E removeLast() {
+        if (size == 0) throw new NoSuchElementException();
+        Node tmp = tail;
+        tail = tail.prev;
+        tail.next = null;
+        size--;
+        System.out.println("deleted: "+tmp.element);
+        return tmp.element;
+    }
+
+    public static void main(String[] args){
+        Exp7_DoublyLinkedList<Integer> dll = new Exp7_DoublyLinkedList<Integer>();
+        dll.addFirst(10);
+        dll.addFirst(34);
+        dll.addLast(56);
+        dll.addLast(364);
+        dll.iterateForward();
+        dll.removeFirst();
+        dll.removeLast();
+        dll.iterateBackward();
+    }
+}
+
+
+
+8. Write a Java program that implements a multi-thread application that has three threads. First thread generates random integer every 1 second and if the value is even, second thread computes the square of the number and prints. If the value is odd, the third thread will print the value of cube of the number.
+
+import java.util.Random;
+
+class RandomNumberThread extends Thread {
+	public void run() {
+		Random random = new Random();
+		for (int i = 0; i < 10; i++) {
+			int randomInteger = random.nextInt(100);
+			System.out.println("Random Integer generated : " + randomInteger);
+			if((randomInteger%2) == 0) {
+				SquareThread sThread = new SquareThread(randomInteger);
+				sThread.start();
+			}
+			else {
+				CubeThread cThread = new CubeThread(randomInteger);
+				cThread.start();
+			}
+            
+			try { Thread.sleep(1000); } 
+			catch (InterruptedException ex) { System.out.println(ex); }
+		}
+	}
+}
+
+class SquareThread extends Thread {
+	int number;
+	SquareThread(int randomNumbern) { number = randomNumbern; }
+	public void run() { System.out.println("Square of " + number + " = " + (number * number)); }
+}
+
+class CubeThread extends Thread {
+	int number;
+	CubeThread(int randomNumber) { number = randomNumber; }
+	public void run() { System.out.println("Cube of " + number + " = " + number * number * number); }
+}
+
+class EXP8 {
+	public static void main(String args[]) {
+		RandomNumberThread object = new RandomNumberThread();
+		object.start();
+	}
+}
+
+
+
+9. Write a Java program that correctly implements the producer – consumer problem using the concept of interthread communication
+
+
+class ItemQueue {
+	int item;
+	boolean valueSet = false;
+	synchronized int getItem(){
+		while (!valueSet){
+			try { wait(); }
+			catch (InterruptedException e) { System.out.println("InterruptedException caught"); }
+		}
+		System.out.println("Consummed:" + item);
+		valueSet = false;
+		try { Thread.sleep(1000); } 
+		catch (InterruptedException e) { System.out.println("InterruptedException caught"); }
+		notify();
+		return item;
+	}
+
+	synchronized void putItem(int item) {
+		while (valueSet){
+			try { wait(); } 
+			catch (InterruptedException e) { System.out.println("InterruptedException caught"); }
+		}
+		this.item = item;
+		valueSet = true;
+		System.out.println("Produced: " + item);
+		try { Thread.sleep(1000); } 
+		catch (InterruptedException e) { System.out.println("InterruptedException caught"); }
+		notify();
+	}
+}
+
+class Producer implements Runnable{
+	ItemQueue itemQueue;
+	Producer(ItemQueue itemQueue){
+		this.itemQueue = itemQueue;
+		new Thread(this, "Producer").start();
+	}
+	public void run() {
+		int i = 0;
+		while(true) {
+			itemQueue.putItem(i++);
+		}
+	}
+}
+
+class Consumer implements Runnable{	
+	ItemQueue itemQueue;
+	Consumer(ItemQueue itemQueue){
+		this.itemQueue = itemQueue;
+		new Thread(this, "Consumer").start();
+	}
+	public void run() {
+		while(true) {
+			itemQueue.getItem();
+		}
+	}
+}
+
+class EXP9{
+	public static void main(String args[]) {
+		ItemQueue itemQueue = new ItemQueue();
+		new Producer(itemQueue);
+		new Consumer(itemQueue);
+	}
+}
+
+
+
+
+10.  Write a java program that loads names and phone numbers from the text file where data is organized as one line per record and each field in record are separated by a tab(\t).It takes a name or phone number as input and prints corresponding other value from hash table(hint: use Hash Table).
+
+
+import java.util.*;
+import java.io.*;
+public class Exp10{
+    public static void main(String[] args){
+        try{
+            FileInputStream fs=new FileInputStream("Lab\\hashTable.txt");
+            Scanner sc = new Scanner(fs).useDelimiter(" ");
+            Hashtable<String,String> ht = new Hashtable<String,String>();
+            String[] arrayList;
+            String a;
+            System.out.println("Welcome to CMR");
+            System.out.println("HASH TABLE IS");
+            System.out.println("---------------------");
+            System.out.println("KEY   :   VALUE");
+            while(sc.hasNext()){
+                a = sc.nextLine();
+                arrayList=a.split(" ");
+                ht.put(arrayList[0],arrayList[1]);
+                System.out.println(arrayList[0]+"   :   "+arrayList[1]);
+            }
+        
+            System.out.println("Welcome to CMR");
+            System.out.println("---  MENU               ---");
+            System.out.println("---  1.search by name   ---");
+            System.out.println("---  2.search by mobile ---");
+            System.out.println("---  3.Exit             ---");
+            String opt="";
+            String name,mobile;
+            Scanner s = new Scanner(System.in);
+        
+            while(opt!="3"){
+                System.out.println("Enter your option 1,2,3");
+                opt = s.next();
+                switch(opt){
+                    case "1":{
+                        System.out.println("Enter name");
+                        name=s.next();
+                        if(ht.containsValue(name)){
+                            for(Map.Entry<String,String> e: ht.entrySet()){
+                                if(name.equals(e.getValue())){
+                                    System.out.println("Mobile is "+e.getKey());
+                                    break;
+                                }
+                            }
+                        }else{
+                            System.out.println("Not Found!!");
+                        }
+                    }break;
+                    case "2":{
+                        System.out.println("Enter mobile");
+                        mobile=s.next();
+                        if(ht.containsKey(mobile)){
+                            for(Map.Entry<String,String> e: ht.entrySet()){
+                                if(mobile.equals(e.getKey())){
+                                    System.out.println("Name is "+e.getValue());
+                                    break;
+                                }
+                            }
+                        }else{
+                            System.out.println("Not Found!!");
+                        }
+                    }break;
+                    case "3":{
+                        opt="3";
+                        System.out.println("Menu Successfully exited");
+                    }break;
+                    default: System.out.println("choose option between 1 and 3");
+                    break;
+                }
+            }
+            sc.close();
+            s.close();
+        }
+        catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        
+    }
+}
+
+
+
+	/*
+		135 randomPerson1
+		134 randomPerson2
+		127 randomPerson3
+		128 randomPerson4
+	*/
+
+
+11. Write a Java program that creates a user interface to perform integer divisions. The user enters two numbers in the text fields, Num1 and Num2. The division of Num1 and Num 2 is displayed in the Result field when the Divide button is clicked. If Num1 or Num2 were not an integer, the program would throw a Number Format Exception. If Num2 were Zero, the program would throw an Arithmetic Exception. Display the exception in a message dialog box
+
+
+import java.awt.*;
+import java.awt.event.*;
+import java.applet.*;
+/*<applet code="DivisionExample"width=230 height=250></applet>*/
+
+public class EXP11 extends Applet implements ActionListener {
+	String msg;
+	TextField num1, num2, res;
+	Label l1, l2, l3;
+	Button div;
+
+	public void init() {
+		l1 = new Label("Dividend");
+		l2 = new Label("Divisor");
+		l3 = new Label("Result");
+		num1 = new TextField(10);
+		num2 = new TextField(10);
+		res = new TextField(10);
+		div = new Button("Click");
+		div.addActionListener(this);
+		add(l1);
+		add(num1);
+		add(l2);
+		add(num2);
+		add(l3);
+		add(res);
+		add(div);
+	}
+
+	public void actionPerformed(ActionEvent ae) {
+		String arg = ae.getActionCommand();
+		int num1 = 0, num2 = 0;
+		if (arg.equals("Click")) {
+		if (this.num1.getText().isEmpty() && this.num2.getText().isEmpty()) {
+				msg = "Enter the valid numbers!";
+				repaint();
+		} else {
+				try {
+				num1 = Integer.parseInt(this.num1.getText());
+				num2 = Integer.parseInt(this.num2.getText());
+
+					int num3 = num1 / num2;
+
+					res.setText(String.valueOf(num3));
+					msg = "Operation Succesfull!!!";
+					repaint();
+				} catch (NumberFormatException ex) {
+					System.out.println(ex);
+					res.setText("");
+				msg = "NumberFormatException - Non-numeric";
+					repaint();
+				} catch (ArithmeticException e) {
+					System.out.println("Can't be divided by Zero" + e);
+					res.setText("");
+					msg = "Can't be divided by Zero";
+					repaint();
+				}
+			}
+		}
+	}
+
+	public void paint(Graphics g) {
+		g.drawString(msg, 30, 70);
+	}
+}
+
+
+
+
+12. Write a Java program that works as a simple calculator. Use a grid layout to arrange buttons for the digits and for the +, -,*, % operations. Add a text field to display the result. Handle any possible exceptions like divided by zero.
+
+
+import java.awt.*; 
+import java.awt.event.*; 
+import java.applet.*;
+// <applet code="Calculator" width=500 height=500></applet>
+
+public class EXP12 extends Applet implements ActionListener{
+	String msg=" "; 
+	int n1,n2,result; 
+	TextField t;
+	Button b[]=new Button[10];
+	Button add,sub,mul,div,clear,mod,EQ; 
+	char OP;
+	
+	public void init(){
+		Color k=new Color(10,89,90); 
+		setBackground(k);
+		t=new TextField(50);
+		GridLayout gl=new GridLayout(6,3); 
+		setLayout(gl);
+		for(int i=0;i<10;i++){
+			b[i]=new Button(""+i);
+		}
+		add=new Button("+"); sub=new Button("-"); mul=new Button("*"); div=new Button("/"); mod=new Button("%"); EQ=new Button("="); 
+		clear=new Button("Clear");
+		t.addActionListener(this); add(t);
+		for(int i=0;i<10;i++){ add(b[i]); }
+		add(add); add(sub); add(mul); add(div); add(mod); add(EQ); add(clear); 
+		for(int i=0;i<10;i++){
+			b[i].addActionListener(this);
+		}
+		add.addActionListener(this); sub.addActionListener(this); mul.addActionListener(this); div.addActionListener(this);
+			mod.addActionListener(this); clear.addActionListener(this); EQ.addActionListener(this);
+	}
+	
+	public void actionPerformed(ActionEvent ae){
+		String str=ae.getActionCommand(); 
+		char ch=str.charAt(0);
+		
+		if ( Character.isDigit(ch)) 
+			t.setText(t.getText()+str); 
+		else
+			if(str.equals("+")){
+				n1=Integer.parseInt(t.getText());
+				OP='+';
+				t.setText("");
+			}
+			else if(str.equals("-")){
+				n1=Integer.parseInt(t.getText()); OP='-';
+				t.setText("");
+			} 
+			else if(str.equals("*")){
+				n1=Integer.parseInt(t.getText());
+				OP='*';
+				t.setText("");
+			}
+			else if(str.equals("/")){
+				n1=Integer.parseInt(t.getText());
+				OP='/';
+				t.setText("");
+			}
+			else if(str.equals("%")){
+				n1=Integer.parseInt(t.getText());
+				OP='%';
+				t.setText("");
+			}
+		
+		if(str.equals("=")){
+			n2=Integer.parseInt(t.getText());
+			if(OP=='+')
+				result=n1+n2; 
+			else if(OP=='-')
+				result=n1-n2; 
+			else if(OP=='*')
+				result=n1*n2; 
+			else if(OP=='/')
+				result=n1/n2; 
+			else if(OP=='%')
+				result=n1%n2;
+			t.setText(""+result);
+		}
+		if(str.equals("Clear")){
+			t.setText("");
+		}
+	}
+}
+
+
+13. Write a Java program that simulates a traffic light. The program lets the user select one of three lights: red, yellow, or green with radio buttons. On selecting a button, an appropriate message with “Stop” or “Ready” or “Go” should appear above the buttons in selected color. Initially, there is no message shown.
+
+
+import java.awt.*;
+import java.awt.event.*;
+import java.applet.*;
+import javax.swing.*;
+// <applet code="Traffic" height=300 width=300></applet>
+public class Exp13 extends JApplet implements ActionListener{
+    JTextField t1;
+    JRadioButton b1,b2,b3;
+    
+    public void init(){
+        Container c = getContentPane();
+        c.setLayout(new FlowLayout());
+        t1=new JTextField(25);
+        b1=new JRadioButton("RED");
+        b2=new JRadioButton("YELLOW");
+        b3=new JRadioButton("GREEN");
+        add(t1); add(b1); add(b2); add(b3);
+        b1.addActionListener(this); b2.addActionListener(this); b3.addActionListener(this); 
+        ButtonGroup bg=new ButtonGroup();
+        bg.add(b1); bg.add(b2); bg.add(b3);        
+    }
+    public void actionPerformed(ActionEvent ae){
+        if(ae.getActionCommand()=="RED"){
+            t1.setText("STOP");
+            t1.setBackground(Color.RED);
+        }
+        if(ae.getActionCommand()=="YELLOW"){
+            t1.setText("READY");
+            t1.setBackground(Color.YELLOW);
+        }
+        if(ae.getActionCommand()=="GREEN"){
+            t1.setText("GO");
+            t1.setBackground(Color.GREEN);
+        }
+    }
+}
+
+
+
+
+14. Write a Java program that handles all mouse events and shows the event name at the center of the window when the mouse event is fires. (Use Adapter Classes) 
+
+
+import java.awt.*;
+import java.applet.*;
+import java.awt.event.*;
+
+// <applet code="AdapterDemo" width=300 height=100></applet>
+
+public class EXP14 extends Applet {
+    String msg = "";
+    int mousex = 0, mousey = 0;
+
+    public EXP14() {
+        addMouseListener(new MyMouseAdapter(this));
+        addMouseMotionListener(new MyMouseMotionAdapter(this));
+    }
+
+    public void paint(Graphics g) {
+        g.drawString(msg, mousex, mousey);
+    }
+}
+
+class MyMouseAdapter extends MouseAdapter {
+    EXP14 ad;
+
+    public MyMouseAdapter(EXP14 ad) {
+        this.ad = ad;
+    }
+
+    public void mouseExited(MouseEvent me) {
+        ad.mousex = me.getX();
+        ad.mousey = me.getY();
+        ad.msg = "Mouse Exited at" + ad.mousex + "  " + ad.mousey;
+        ad.repaint();
+        ad.showStatus("Mouse Exited");
+    }
+
+    public void mouseEntered(MouseEvent me) {
+        ad.mousex = me.getX();
+        ad.mousey = me.getY();
+        ad.msg = "Mouse entered at " + ad.mousex + "  " + ad.mousey;
+        ad.repaint();
+        ad.showStatus("Mouse Entered");
+    }
+
+    public void mouseReleased(MouseEvent me) {
+        ad.mousex = me.getX();
+        ad.mousey = me.getY();
+        ad.msg = "Mouse Released at" + ad.mousex + "  " + ad.mousey;
+        ad.repaint();
+        ad.showStatus("Mouse Released");
+    }
+
+    public void mousePressed(MouseEvent me) {
+        ad.mousex = me.getX();
+        ad.mousey = me.getY();
+        ad.msg = "Mouse Pressed at" + ad.mousex + "  " + ad.mousey;
+        ad.repaint();
+        ad.showStatus("Mouse Pressed");
+    }
+
+    public void mouseClicked(MouseEvent me) {
+        ad.mousex = me.getX();
+        ad.mousey = me.getY();
+        ad.msg = "Mouse Clicked at" + ad.mousex + "  " + ad.mousey;
+        ad.repaint();
+        ad.showStatus("Mouse Clicked");
+    }
+}
+
+class MyMouseMotionAdapter extends MouseMotionAdapter {
+    EXP14 ad;
+
+    public MyMouseMotionAdapter(EXP14 ad) {
+        this.ad = ad;
+    }
+
+    public void mouseMoved(MouseEvent me) {
+        ad.mousex = me.getX();
+        ad.mousey = me.getY();
+        ad.msg = "Mouse moved at" + ad.mousex + "  " + ad.mousey;
+        ad.repaint();
+        ad.showStatus("Mouse Moved");
+    }
+
+    public void mouseDragged(MouseEvent me) {
+        ad.mousex = me.getX();
+        ad.mousey = me.getY();
+        ad.msg = "Mouse Dragged at" + ad.mousex + "  " + ad.mousey;
+        ad.repaint();
+        ad.showStatus("Mouse Dragged");
+    }
+}
+
+
+
+15. Suppose that a table named Table.txt is stored in a text file. The First line in the file is the header, and the remaining lines correspond to rows in table. The elements are separated by commas. Write java program to display the table using Labels in Grid Layout.
+
+
+import java.io.*;
+import java.util.*;
+import java.awt.*;
+import javax.swing.*;
+class A extends JFrame {
+    public A() {
+        setSize(400,400);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        GridLayout g = new GridLayout(0,3);
+        setLayout(g);
+        try {
+            FileInputStream fin = new FileInputStream("C:\\Users\\movva\\Documents\\Programs\\Java\\Lab\\Exp15.txt");
+            Scanner sc = new Scanner(fin).useDelimiter(",");
+            String[] arrayList;
+            String a;
+            while (sc.hasNextLine()) {
+                a = sc.nextLine();
+                arrayList = a.split(",");
+                for (String i : arrayList) {
+                    add(new JLabel(i));
+                }
+            }
+        } catch (Exception ex) {}
+        setDefaultLookAndFeelDecorated(true);
+        pack();
+        setVisible(true);
+    }
+    }
+    public class EXP15 {
+        public static void main(String[] args) {
+            A a = new A();
+        }
+    }
+
+
+
+	/*
+		madhu,527,csea
+		aakash,534,csea
+		abhi,535,csea
+		prithvi,545,csea
+	*/

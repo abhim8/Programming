@@ -1,0 +1,293 @@
+<!-- 
+    Modern Web Design-
+        HTML: Structure
+        CSS: Presentation
+        JavaScript: Behavior 
+        PHP or similar: Backend
+        CMS: Content Management
+-->
+
+<!--
+    HTML documents are made up of HTML elements.
+    An HTML element is written using a start tag and an end tag, and with the content in between.
+-->
+
+<!--
+    HTML Attributes- 
+    Attributes provide additional information about an element or a tag, while also modifying them.
+    Most attributes have a value; the value modifies the attribute.
+    (Attributes are always specified in the start tag, and they appear in name="value" pairs.)
+
+    Ex: 
+        1)  we can modify the horizontal line so it has a width of 50: <hr width="50px"/>
+                                            *or*
+            An element's width can also be defined using percentages: <hr width="50%"/>
+
+        2) The align attribute is used to specify how the text is aligned:
+            <p align="center">This is a text <br /> <hr width="10%" align="right" /> This is also a text. </p>
+ -->
+
+<!-- 
+    The <img> tag is used to insert an image. It contains only attributes, and does not have a closing tag.
+    The image's URL (address) can be defined using the src attribute.
+    (The alt attribute specifies an alternate text for an image.)
+
+        The HTML image syntax looks like this: <img src="image.jpg" alt="" /> 
+    
+    To define the image size, use the width and height attributes.
+    The value can be specified in pixels or as a percentage:
+        <img src="http://www.images/tree.jpg" height="150px" width="150px" alt="" />
+        <br />
+        <img src="http://www.images/tree.jpg" height="50%" width="50%" alt="" />
+ -->
+
+ <!-- 
+    Links are also an integral part of every web page. You can add links to text or images that will enable the user to click on them in order to be directed to another file or webpage.
+    In HTML, links are defined using the <a> tag.
+    (The target attribute specifies where to open the linked document)
+    Use the href attribute to define the link's destination address:
+        syntax:  <a href=""></a>
+
+        Ex:<a href="http://www.google.com"> Learn Playing </a>
+  -->
+
+<!-- 
+    An ordered list starts with the <ol> tag, and each list item is defined by the <li> tag.
+        EX:
+        <body>
+            <ol>
+                <li>Red</li>
+                <li>Blue</li>
+                <li>Green</li>
+            </ol>
+        </body>
+ -->
+
+ <!-- 
+     An unordered list starts with the <ul> tag.
+        EX:
+        <body>
+            <ul>
+                <li>Red</li>
+                <li>Blue</li>
+                <li>Green</li>
+            </ul>
+        </body>
+  -->
+
+  <!-- 
+      Creating a Table
+        Tables are defined by using the <table> tag.
+        Tables are divided into table rows with the <tr> tag.
+        Table rows are divided into table columns (table data) with the <td> tag.
+        (Table data tags <td> act as data containers within the table. 
+            They can contain all sorts of HTML elements, such as text, images, lists, other tables, and so on.)
+
+            Ex:
+            <table>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+
+            -> A border can be added using the border attribute:
+                EX: <table border="2">
+            -> A table cell can span two or more columns:
+                    EX:
+                    <table border="2">
+                        <tr>
+                            <td>Red</td>
+                            <td>Blue</td>
+                            <td>Green</td>
+                        </tr>
+                        <tr>
+                            <td><br /></td>
+                            <td colspan="2"><br /></td>
+                        </tr>
+                    </table>
+            
+            -> To change your table's position, use the align attribute inside your table tag:
+                  EX:  <table align="center"> 
+            
+            -> let's specify a background color of red for a table cell. To do that, just use the bgcolor attribute.
+                    EX: <td bgcolor="red">Red</td>
+   -->
+
+<!-- 
+    The <th> tags represent the table headers.
+        EX:
+            <table>
+                <tr>
+                    <th>Day</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                </tr>
+            </table>
+ -->
+
+<!-- 
+    In HTML, most elements are defined as block level or inline elements.
+    Block level elements start from a new line.
+    For example: <h1>, <form>, <li>, <ol>, <ul>, <p>, <pre>, <table>, <div>, etc.
+
+    Inline elements are normally displayed without line breaks.
+    For example: <b>, <a>, <strong>, <img>, <input>, <em>, <span>, etc.
+
+    The <div> element is a block-level element that is often used as a container for other HTML elements.
+    When used together with some CSS styling, the <div> element can be used to style blocks of content:
+        <html>
+            <body>
+                <h1>Headline</h1>
+                <div style="background-color:green; color:white; padding:20px;">
+                    <p>Some paragraph text goes here.</p>
+                    <p>Another paragraph goes here.</p>
+                </div>
+            </body>
+        </html>
+
+    
+    Similarly, the <span> element is an inline element that is often used as a container for some text.
+    When used together with CSS, the <span> element can be used to style parts of the text:
+        ex:
+        <html>
+            <body>
+                <h2>Some 
+                    <span style="color:red">Important</span>
+                    Message</h2>
+            </body>
+        </html>
+ -->
+
+<!-- 
+    Types of Elements-
+    Other elements can be used either as block level elements or inline elements. This includes the following elements:
+        APPLET - embedded Java applet
+        IFRAME - Inline frame
+        INS - inserted text
+        MAP - image map
+        OBJECT - embedded object
+        SCRIPT - script within an HTML document
+    
+    You can insert inline elements inside block elements.
+     For example, you can have multiple <span> elements inside a <div> element.
+ -->
+
+ <!-- 
+     The <form> Element
+        HTML forms are used to collect information from the user.
+        Forms are defined using the <form> element, with its opening and closing tags:
+            <body>
+                <form></form>
+            </body>
+
+        -> Use the action attribute to point to a webpage that will load after the user submits the form.
+                ex:  <form action="http://www.sololearn.com"> </form>
+
+        -> The method attribute specifies the HTTP method (GET or POST) to be used when forms are submitted 
+                ex: <form action="url" method="GET">
+                ex: <form action="url" method="POST">
+            (see below for description):
+                    *When you use GET, the form data will be visible in the page address.
+                    *Use POST if the form is updating data, or includes sensitive information (passwords).
+                     POST offers better security because the submitted data is not visible in the page address.
+        
+        -> To take in user input, you need the corresponding form elements, such as text fields. 
+            The <input> element has many variations, depending on the type attribute.
+            It can be a text, password, radio, URL, submit, etc.
+            EX:
+                    <form>
+                        <input type="text" name="username" /><br />
+                        <input type="password" name="password" />
+                    </form>
+
+        -> If we change the input type to radio, it allows the user select only one of a number of choices:
+                    EX:
+                        <input type="radio" name="gender" value="male" />Male <br />
+                        <input type="radio" name="gender" value="female" />Female <br />
+        
+        -> The type "checkbox" allows the user to select more than one option:
+                    EX:
+                        <input type="checkbox" name="gender" value="1" />Male <br />
+                        <input type="checkbox" name="gender" value="2" />Female <br />
+
+        -> The submit button submits a form to its action attribute:
+                    EX:
+                        <input type="submit" value="Submit" /> 
+  -->
+
+<!-- 
+    HTML colors are expressed as hexadecimal values:
+        0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F
+
+    -> Colors are displayed in combinations of red, green, and blue light (RGB).
+    -> Hex values are written using the hashtag symbol (#), followed by either three or six hex characters.
+        Ex: <body bgcolor="#FFFFFF">
+ -->
+
+ <!-- 
+     The <frame> Tag
+        A page can be divided into frames using a special frame document.
+        The <frame> tag defines one specific window (frame) within a <frameset>. Each <frame> in a <frameset> can have different attributes, such as border, scrolling, the ability to resize, etc.
+
+        The <frameset> element specifies the number of columns or rows in the frameset, as well as what percentage or number of pixels of space each of them occupies.
+        Ex:
+            framesetcols="100, 25%, *"></frameset>
+            <frameset rows="100, 25%, *"></frameset>
+  -->
+
+
+<!-- Basic Structure -->
+<!-- <html>
+    <head>
+        <title>first page</title>
+    </head>
+    <body>
+        <p>This is a paragraph.</p>
+        <p>This is another paragraph. </p>
+        <p>This is <br /> a line break </p>
+    </body>
+</html> -->
+
+
+<!-- Formatting Tags -->
+<!-- <html>
+    <head>
+        <title>first page</title>
+    </head>
+    <body>
+        <p>This is regular text </p>
+        <p><b>bold text </b></p>
+        <p><big> big text </big></p>
+        <p><i> italic text </i></p>
+        <p><small> small text </small></p>
+        <p><strong> strong text </strong></p>
+        <p><sub> subscripted text </sub></p>
+        <p><sup> superscripted text </sup></p>
+        <p><ins> inserted text </ins></p>
+        <p><del> deleted text </del></p>
+    </body>
+</html>
+ -->
+
+<!-- HTML Headings -->
+<!-- <html>
+    <head>
+        <title>first page</title>
+    </head>
+    <body>
+        <h1>This is heading 1</h1>
+        <h2>This is heading 2</h2>
+        <h3>This is heading 3</h3>
+        <h4>This is heading 4</h4>
+        <h5>This is heading 5</h5>
+        <hr/>  // To create a horizontal line, use the <hr /> tag.  
+        <h6>This is heading 6</h6>
+    </body>
+</html> 
+
+-->

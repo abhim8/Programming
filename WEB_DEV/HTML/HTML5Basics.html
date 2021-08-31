@@ -1,0 +1,340 @@
+<!-- HTML5 -->
+
+<!-- 
+    When writing HTML5 documents, one of the first new features that you'll notice is the doc type declaration:
+        <!DOCTYPE HTML>
+ -->
+<!-- New Elements in HTML5:
+        <article>, <aside>, <audio>, <canvas>, <datalist>, <details>, <embed>, <footer>, <header>, <nav>, <output>, <progress>, <section>, <video>, and even more! -->
+
+<!-- 
+        The character encoding (charset) declaration is also simplified:
+        <meta charset="UTF-8">
+  -->
+
+<!-- 
+        *Content Models*:
+
+        Metadata: Content that sets up the presentation or behavior of the rest of the content. These elements are found in the head of the document.
+        Elements: <base>, <link>, <meta>, <noscript>, <script>, <style>, <title>
+
+        Embedded: Content that imports other resources into the document.
+        Elements: <audio>, <video>, <canvas>, <iframe>, <img>, <math>, <object>, <svg>
+
+        Interactive: Content specifically intended for user interaction.
+        Elements: <a>, <audio>, <video>, <button>, <details>, <embed>, <iframe>, <img>, <input>, <label>, <object>, <select>, <textarea>
+
+        Heading: Defines a section header.
+        Elements: <h1>, <h2>, <h3>, <h4>, <h5>, <h6>, <hgroup>
+
+        Phrasing: This model has a number of inline level elements in common with HTML4.
+        Elements: <img>, <span>, <strong>, <label>, <br />, <small>, <sub>, and more.
+ -->
+
+ <!-- 
+        In HTML5, a simple <header> tag is used.
+        The <header> element is appropriate for use inside the body tag.
+            <!DOCTYPE html>
+            <html>
+                <head></head>
+                <body>
+                    <header>
+                        <h1>Most important heading</h1>
+                        <h3>Less important heading</h3>
+                    </header>
+                </body>
+            </html>
+  -->
+
+  <!-- 
+      The <nav> Element:
+            This tag represents a section of a page that links to other pages or to certain sections within the page. This would be a section with navigation links.
+            Here is an example of a major block of navigation links:
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">About us</a></li>
+                    </ul>
+                </nav>
+   -->
+
+   <!-- 
+       Article is a self-contained, independent piece of content that can be used and distributed separately from the rest of the page or site.
+       This could be a forum post, a magazine or newspaper article, a blog entry, a comment, an interactive widget or gadget, or any other independent piece of content.
+       Ex:
+            <article>
+                <h1>The article title</h1> 
+                <p>Contents of the article element </p>
+            </article>
+    -->
+
+    <!-- 
+        <section> is a logical container of the page or article.
+        Sections can be used to divide up content within an article.
+        For example, a homepage could have a section for introducing the company, another for news items, and still another for contact information.
+        Each <section> should be identified, typically by including a heading (h1-h6 element) as a child of the <section> element.
+            Ex:
+                <article>
+                    <h1>Welcome</h1>
+                    <section>
+                        <h1>Heading</h1>
+                        <p>content or image</p>
+                    </section>
+                </article>
+     -->
+
+     <!-- 
+         <aside> is secondary or tangential content which could be considered separate from but indirectly related to the main content.
+        This type of content is often represented in sidebars.
+        When an <aside> tag is used within an <article> tag, the content of the <aside> should be specifically related to that article.
+            EX:
+                <article>
+                    <h1> Gifts for everyone</h1>
+                    <p>This website will be the best place for choosing gifts</p>
+                    <aside>
+                        <p>Gifts will be delivered to you within 24 hours</p>
+                    </aside>
+                </article>
+      -->
+
+      <!-- 
+          Audio on the Web:
+            There are two different ways to specify the audio source file's URL. The first uses the source attribute:
+                1)      <audio src="http://www.sololearn.com/uploads/audio.mp3" controls>
+                            Audio element not supported by your browser
+                        </audio>
+            
+                2)      <audio controls>
+                            <source src="http://www.sololearn.com/uploads/audio.mp3" type="audio/mpeg">
+                            <source src="http://www.sololearn.com/uploads/audio.ogg" type="audio/ogg">
+                        </audio> 
+
+
+            Attributes of <audio>:
+                controls: Specifies that audio controls should be displayed (such as a play/pause button, etc.) 
+                autoplay: When this attribute is defined, audio starts playing as soon as it is ready, without asking for the visitor's permission.
+                loop: This attribute is used to have the audio replay every time it is finished.
+       -->
+
+<!-- 
+    Videos in HTML:
+        The video element is similar to the audio element.
+        You can specify the video source URL using an attribute in a video element, or using source elements inside the video element:
+        Ex:
+                <video controls>
+                    <source src="http://www.sololearn.com/uploads/video.mp4" type="video/mp4">
+                    <source src="http://www.sololearn.com/uploads/video.ogg" type="video/ogg">
+                    Video is not supported by your browser
+                </video>
+
+    Attributes of <video>:
+        Another aspect shared by both the audio and the video elements is that each has controls, autoplay and loop attributes.
+        In this example, the video will replay after it finishes playing:
+                <video controls autoplay loop>
+                    <source src="http://www.sololearn.com/uploads/video.mp4" type="video/mp4">
+                    <source src="http://www.sololearn.com/uploads/video.ogg" type="video/ogg">
+                    Video is not supported by your browser
+                </video>
+-->
+
+<!-- 
+    Progress Bar:
+        The <progress> element provides the ability to create progress bars on the web.
+        The progress element can be used within headings, paragraphs, or anywhere else in the body.
+
+    Progress Element Attributes:
+        Value: Specifies how much of the task has been completed.
+        Max: Specifies how much work the task requires in total.
+ -->
+
+ <!-- 
+     Types of Web Storage Objects
+        There are two types of web storage objects:
+            - sessionStorage()
+            - localStorage()
+
+    Local vs. Session
+        - Session Storage is destroyed once the user closes the browser
+        - Local Storage stores data with no expiration date
+
+    The syntax for web storage for both local and session storage is very simple and similar.
+        The data is stored as key/value pairs.
+
+    Storing a Value: localStorage.setItem("key1", "value1");
+    Getting a Value: alert(localStorage.getItem("key1")); 
+    Removing a Value: localStorage.removeItem("key1");
+    Removing All Values: localStorage.clear();
+  -->
+
+
+  <!-- 
+      What is the Geolocation API?
+        In HTML5, the Geolocation API is used to obtain the user's geographical location.
+        Since this can compromise user privacy, the option is not available unless the user approves it.
+
+        The Geolocation API’s main method is getCurrentPosition, which retrieves the current geographic location of the user's device.
+            EX: navigator.geolocation.getCurrentPosition();
+            Parameters:
+                showLocation (mandatory): Defines the callback method that retrieves location information.
+                ErrorHandler(optional): Defines the callback method that is invoked when an error occurs in processing the asynchronous call.
+                Options (optional): Defines a set of options for retrieving the location information.
+   -->
+
+   <!-- 
+       Presenting Data
+        User location can be presented in two ways: Geodetic and Civic.
+            1. The geodetic way to describe position refers directly to latitude and longitude.
+            2. The civic representation of location data is presented in a format that is more easily read and understood by the average person.
+    -->
+
+    <!-- 
+        Making Elements Draggable
+            The drag and drop feature lets you "grab" an object and drag it to a different location.
+            To make an element draggable, just set the draggable attribute to true:
+                <img draggable="true" />
+     -->
+
+
+     <!-- 
+         Drawing Shapes
+            SVG stands for Scalable Vector Graphics, and is used to draw shapes with HTML-style markup.
+            It offers several methods for drawing paths, boxes, circles, text, and graphic images.
+
+        Shape Animations
+            SVG animations can be created using the <animate> element.
+                attributeName: Specifies which attribute will be affected by the animation
+                from: Specifies the starting value of the attribute
+                to: Specifies the ending value of the attribute
+                dur: Specifies how long the animation runs (duration)
+                fill: Specifies whether or not the attribute's value should return to its initial value when the animation is finished (Values: "remove" resets the value; "freeze" keeps the “to value”)
+                repeatCount: Specifies the repeat count of the animation
+        
+        Paths
+            The <path> element is used to define a path.
+                The following commands are available for path data:
+                M: moveto
+                L: lineto
+                H: horizontal lineto
+                V: vertical lineto
+                C: curveto
+                S: smooth curveto
+                Q: quadratic Bézier curve
+                T: smooth quadratic Bézier curveto
+                A: elliptical Arc
+                Z: closepath
+
+        The <canvas> Element
+            The HTML canvas is used to draw graphics that include everything from simple lines to complex graphic objects.
+                The <canvas> element is defined by:
+                <canvas id="canvas1" width="200" height="100">
+                </canvas>
+
+            The <canvas> element must have an id attribute so it can be referred to by JavaScript:
+            <html>
+            <head></head>
+            <body>
+                <canvas id="canvas1" 
+            width="400" height="300"></canvas> 
+
+            <script>
+                var can = document.getElementById("canvas1"); 
+                var ctx = can.getContext("2d");
+            </script>
+
+            </body>
+            </html>
+            HTML
+            getContext() returns a drawing context on the canvas.
+
+        Drawing Shapes
+            The fillRect(x, y, w, h) method draws a "filled" rectangle, in which w indicates width and h indicates height.
+            The default fill color is black.
+                The fillStyle property is used to set a color, gradient, or pattern to fill the drawing.
+                Using this property allows you to draw a green-filled rectangle.
+        
+            The canvas supports various other methods for drawing:
+
+            Draw a Line
+            moveTo(x,y): Defines the starting point of the line.
+            lineTo(x,y): Defines the ending point of the line.
+
+            Draw a Circle
+            beginPath(): Starts the drawing.
+            arc(x,y,r,start,stop): Sets the parameters of the circle.
+            stroke(): Ends the drawing.
+
+            Gradients
+            createLinearGradient(x,y,x1,y1): Creates a linear gradient.
+            createRadialGradient(x,y,r,x1,y1,r1): Creates a radial/circular gradient.
+
+            Drawing Text on the Canvas
+            Font: Defines the font properties for the text.
+            fillText(text,x,y): Draws "filled" text on the canvas.
+            strokeText(text,x,y): Draws text on the canvas (no fill).
+    
+
+    Canvas vs. SVG
+        Canvas
+        - Elements are drawn programmatically
+        - Drawing is done with pixels
+        - Animations are not built in
+        - High performance for pixels-based drawing operations
+        - Resolution dependent
+        - No support for event handlers
+        - You can save the resulting image as .png or .jpg
+        - Well suited for graphic-intensive games
+
+        SVG
+        - Elements are part of the page's DOM (Document object model)
+        - Drawing is done with vectors
+        - Effects, such as animations are built in
+        - Based on standard XML syntax, which provides better accessibility
+        - Resolution independent
+        - Support for event handlers
+        - Not suited for game applications
+        - Best suited for applications with large rendering areas (for example, Google Maps)
+
+  -->
+
+
+      
+<!-- 
+    HTML5 Forms
+        HTML5 brings many features and improvements to web form creation.
+        There are new attributes and input types that were introduced to help create better experiences for web users.
+        HTML5 has introduced a new attribute called placeholder. On <input> and <textarea> elements, this attribute provides a hint to the user of what information can be entered into the field.
+
+    HTML5 added several new input types:
+    - color
+    - date
+    - datetime
+    - datetime-local
+    - email
+    - month
+    - number
+    - range
+    - search
+    - tel
+    - time
+    - url
+    - week
+
+    New input attributes in HTML5:
+    - autofocus
+    - form
+    - formaction
+    - formenctype
+    - formmethod
+    - formnovalidate
+    - formtarget
+    - height and width
+    - list
+    - min and max
+    - multiple
+    - pattern (regexp)
+    - placeholder
+    - required
+    - step
+
+ -->

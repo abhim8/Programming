@@ -1,0 +1,38 @@
+
+#btn-login{
+    background-color: lightblue;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 9px;
+    outline: none;
+    cursor: pointer;
+}
+
+#btn-login:hover{
+    background-color: lightsalmon;
+    color: midnightblue;
+}
+
+#btn-signin{
+    background-color: white;
+    border: 2px solid lightblue;
+    padding: 8px 16px;
+    border-radius: 9px;
+    outline: none;
+    cursor: pointer;
+}
+
+#btn-signin:hover{
+    background-color: lightsalmon;
+    color: midnightblue;
+}
+
+#btn-dis{
+    background-color: lightblue;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 9px;
+    outline: none;
+    cursor: not-allowed;
+    opacity: 0.6;
+}

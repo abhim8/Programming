@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+}
+
+h1 {
+    color: tomato;
+    text-align: right;
+    font-style: italic;
+    text-decoration: underline;
+    text-transform: capitalize;
+}
+
+p {
+    color: brown;
+    text-align: justify;
+    font-weight: 600;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    line-height: 1.5;
+    font-family: sans-serif;
+}

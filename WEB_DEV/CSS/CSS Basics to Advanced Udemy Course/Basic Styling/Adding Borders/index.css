@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+}
+
+#second-p{
+    border-style: dashed;
+    border-width: 6px;
+    border-radius: 8px;
+    border-color: red;
+}

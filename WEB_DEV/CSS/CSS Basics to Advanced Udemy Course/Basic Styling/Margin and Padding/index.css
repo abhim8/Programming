@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+}
+
+#second-p{
+    /*short hand
+        border: size style color */
+    border-style: dashed;
+    border-width: 6px;
+    border-radius: 8px;
+    border-color: red;
+
+    padding: 60px;
+    /*short hand
+        padding: top right bottom left */
+
+    margin-top: 48px;
+    margin-right: 24px;
+    margin-left: 30px;
+    margin-bottom: 40px;
+    /*short hand
+        margin: top right bottom left */
+
+
+}

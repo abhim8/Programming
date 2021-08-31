@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Travel Diary</title>
+    <style>
+        body {
+            border: 0;
+            margin: 0;
+        }
+        #main-pic {
+            height: 10%;
+            width: 100%;
+        }
+        li {
+            display: inline;
+            float: left;
+        }
+        a {
+            display: block;
+            padding: 8px;
+            background-color: lightblue;
+        }
+        ul {
+            background-color: #dddddd;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgb(61, 56, 56);
+        }
+
+        .navlinks {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover {
+            background-color: rgb(199, 96, 27);
+        }
+
+        #submit-button {
+            background-color: lightcoral;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-left: 24px;
+            padding-right: 24px;
+            font-size: 18px;
+            color: white;
+            border: none;
+        }
+
+        .input-box {
+            font-size: 18px;
+            padding-bottom: 12px;
+            margin-bottom: 36px;
+            border: 0;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            width: 100%;
+            border-bottom: 1px solid #ccc;
+        }
+        .input-fields-container {
+            padding-top: 80px;
+            padding-bottom: 40px;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+        form {
+            border-color: #ccc;
+            border-width: 1px;
+            background-color: white;
+            text-align: center;
+            width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        <ul>
+            <li style="padding: 11px 11px;"><a class="navlinks"  href="index.html">TRIPS</a></li>
+            <li style="padding: 11px 11px;"><a class="navlinks" href="about.html">ABOUT</a></li>
+            <li style="padding: 11px 11px;"><a class="navlinks" href="#contactme.html">CONTACT</a></li>
+        </ul>
+    </div>
+    
+   <h1 style="text-align: center;">Want to come on my next trip? contact me!</h1>
+   <form >
+    <div class="input-fields-container">
+       <div>
+        <input class="input-box" type="text" name="username" placeholder="Username"><br>
+        <input class="input-box" type="email" name="mail" placeholder="Email"><br>
+        <input class="input-box" type="number" name="number" placeholder="Contact Number">
+       </div>
+
+       <input id="submit-button" type="submit" value="Submit" id="submit-button">
+    </div>
+
+   </form>
+
+</body>
+</html>

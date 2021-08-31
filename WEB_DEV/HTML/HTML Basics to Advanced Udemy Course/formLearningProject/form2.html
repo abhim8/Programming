@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms Project</title>
+    <style>
+        #register-form {
+            width: 419px;
+            background-color: white;
+            padding: 24px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .input-label {
+            color: black;
+            margin: 0;
+            margin-bottom: 4px;
+            margin-top: 12px;
+        }
+        h1 {
+            color: black;
+            text-align: center;
+        }
+        .input-item {
+            width: 100%;
+        }
+        #terms-check {
+            margin-top: 12px;
+            margin-bottom: 18px;
+        }
+    </style>
+</head>
+<body style="background-color: lightblue;">
+    <h1>Signup</h1>
+    <form id="register-form" method="GET">
+        <div class="input-label">
+            <p>Full Name: </p>
+            <input class="input-item" type="text" name="fullname">
+        </div>
+        <div class="input-label">
+            <p>Email: </p>
+            <input class="input-item" type="email" name="mail">
+        </div>
+        <div class="input-label">
+            <p>Password: </p>
+            <input class="input-item" type="password" name="pw">
+        </div>
+        <div class="input-label">
+            <p>Confirm Password: </p>
+            <input class="input-item" type="password" name="confirm-pw">
+        </div>
+        <div class="input-label">
+            <p>Gender: </p>
+            <input type="radio" value="male" name="male">Male </input>
+            <input type="radio" value="female" name="female">Female </input>
+            <input type="radio" value="other" name="other">Other </input>
+        </div>
+        <div class="input-label">
+            <p>Security Question: </p>
+            <select class="input-item" name="security-question"> 
+                <option value="first-pet-name">What was your first pet name?</option>
+                <option value="first-job">What was your first job?</option>
+                <option value="first-city">What was your first city?</option>
+                <option value="nick-name">What was your nickname?</option>
+            </select>
+        </div>
+        <div>
+            <textarea class="input-item" name="answer" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <input id="terms-check" type="checkbox" name="terms-conditions" value="accept"> I agree to accept terms and conditions
+        </div>
+        <br>
+        <input type="submit" value="register">
+    </form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+}
+#topbar {
+    background-color: lightblue;
+    padding: 24px 48px;
+}
+
+.menu-item{
+    font-size: 24px;
+    margin-right: 24px;
+    color: black;
+    text-decoration: none;
+}
+
+.menu-item:link {
+    color: blue;
+}
+.menu-item:visited{
+    color: brown;
+}
+.menu-item:hover{
+    color: coral;
+}
+.menu-item:active{
+    color: blueviolet;
+}

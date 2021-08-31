@@ -1,0 +1,20 @@
+
+Day-1: Intro to java, program structure of java.
+
+Day-2: helloWorld prgrm, data types, variables and rules.
+
+Day-3: type casting, operators, expressions.
+
+Day-4: control statements (selection, iterative, jump statements) 
+
+Day-5: Strings
+
+Day-6: Java Math Class, Arrays, Multi Dimensional Array.
+
+Day-7: Methods, Parameters & Arguments
+
+Day-8: Method Overloading, Recursion
+
+Day-9: OOP Concepts, Class, Object
+
+Day-10: Class Methods, Static vs Non-static, Accessing methods using objects

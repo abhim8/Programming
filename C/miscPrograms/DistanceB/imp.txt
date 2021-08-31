@@ -1,0 +1,1 @@
+celcius = (0.56) * (fahrenheit - 32);
